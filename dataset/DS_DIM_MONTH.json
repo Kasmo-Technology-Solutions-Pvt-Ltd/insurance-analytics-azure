@@ -1,0 +1,71 @@
+{
+	"name": "DS_DIM_MONTH",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/POLICY-CENTER"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "MONTH_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MONTH_OFFSET_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "Month",
+				"type": "varchar"
+			},
+			{
+				"name": "MonthName",
+				"type": "varchar"
+			},
+			{
+				"name": "QUARTER",
+				"type": "varchar"
+			},
+			{
+				"name": "Year",
+				"type": "varchar"
+			},
+			{
+				"name": "MonthYear",
+				"type": "varchar"
+			},
+			{
+				"name": "MMYYYY",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "YearName",
+				"type": "varchar"
+			},
+			{
+				"name": "MonthOfQuarter",
+				"type": "varchar"
+			},
+			{
+				"name": "MONTH_END_DATE",
+				"type": "varchar"
+			},
+			{
+				"name": "MONTH_BEGIN_DATE",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "PCDM",
+			"table": "DW_DIM_MONTH"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

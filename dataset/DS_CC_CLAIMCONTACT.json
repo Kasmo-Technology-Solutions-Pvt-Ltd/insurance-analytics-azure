@@ -1,0 +1,134 @@
+{
+	"name": "DS_CC_CLAIMCONTACT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/CLAIM-CENTER"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "dbo_CC_CLAIMCONTACT_2023-04-17 17:38:03:549.parquet",
+				"folderPath": "2023/2023-04/2023-04-17",
+				"fileSystem": "claim-center"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "ContactValidTo",
+				"type": "INT96"
+			},
+			{
+				"name": "Service",
+				"type": "UTF8"
+			},
+			{
+				"name": "Retired",
+				"type": "INT64"
+			},
+			{
+				"name": "ContactProhibited",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "EssentialServiceType",
+				"type": "INT32"
+			},
+			{
+				"name": "PublicID",
+				"type": "UTF8"
+			},
+			{
+				"name": "ArchivePartition",
+				"type": "INT64"
+			},
+			{
+				"name": "ClaimantFlag",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "CreateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "ID",
+				"type": "INT64"
+			},
+			{
+				"name": "BeanVersion",
+				"type": "INT32"
+			},
+			{
+				"name": "UpdateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "ClaimID",
+				"type": "INT64"
+			},
+			{
+				"name": "LoadCommandID",
+				"type": "INT64"
+			},
+			{
+				"name": "ContactID",
+				"type": "INT64"
+			},
+			{
+				"name": "PersonFirstNameDenorm",
+				"type": "UTF8"
+			},
+			{
+				"name": "UpdateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "BenefitEndReasonType",
+				"type": "INT32"
+			},
+			{
+				"name": "ContactValidFrom",
+				"type": "INT96"
+			},
+			{
+				"name": "PersonLastNameDenorm",
+				"type": "UTF8"
+			},
+			{
+				"name": "BenefitEndDate",
+				"type": "INT96"
+			},
+			{
+				"name": "DependentType",
+				"type": "INT32"
+			},
+			{
+				"name": "BenefitEndReason",
+				"type": "UTF8"
+			},
+			{
+				"name": "ContactNameDenorm",
+				"type": "UTF8"
+			},
+			{
+				"name": "PolicyID",
+				"type": "INT64"
+			},
+			{
+				"name": "CreateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "ProviderType",
+				"type": "INT32"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,120 @@
+{
+	"name": "PC_PAYMENTPLANSUMMARY",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/POLICY-CENTER"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "dbo_PC_PAYMENTPLANSUMMARY_2023-04-17 18:18:05:028.parquet",
+				"folderPath": "2023/2023-04/2023-04-17",
+				"fileSystem": "policy-center"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "Notes",
+				"type": "UTF8"
+			},
+			{
+				"name": "CreateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "PublicID",
+				"type": "UTF8"
+			},
+			{
+				"name": "DownPayment",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "Total",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "Total_cur",
+				"type": "INT32"
+			},
+			{
+				"name": "DownPayment_cur",
+				"type": "INT32"
+			},
+			{
+				"name": "BeanVersion",
+				"type": "INT32"
+			},
+			{
+				"name": "ArchivePartition",
+				"type": "INT64"
+			},
+			{
+				"name": "CreateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "Retired",
+				"type": "INT64"
+			},
+			{
+				"name": "PaymentPlanType",
+				"type": "INT32"
+			},
+			{
+				"name": "Name",
+				"type": "UTF8"
+			},
+			{
+				"name": "UpdateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "InvoiceFrequency",
+				"type": "INT32"
+			},
+			{
+				"name": "ReportingPatternCode",
+				"type": "UTF8"
+			},
+			{
+				"name": "PolicyPeriod",
+				"type": "INT64"
+			},
+			{
+				"name": "UpdateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "BillingId",
+				"type": "UTF8"
+			},
+			{
+				"name": "Installment",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "Installment_cur",
+				"type": "INT32"
+			},
+			{
+				"name": "ID",
+				"type": "INT64"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

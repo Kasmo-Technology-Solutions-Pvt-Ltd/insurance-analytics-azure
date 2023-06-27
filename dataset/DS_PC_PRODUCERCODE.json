@@ -1,0 +1,102 @@
+{
+	"name": "DS_PC_PRODUCERCODE",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/POLICY-CENTER"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "dbo_PC_PRODUCERCODE_2023-04-17 18:18:05:028.parquet",
+				"folderPath": "2023/2023-04/2023-04-17",
+				"fileSystem": "policy-center"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "CreateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "PublicID",
+				"type": "UTF8"
+			},
+			{
+				"name": "ProducerStatus",
+				"type": "INT32"
+			},
+			{
+				"name": "PreferredUnderwriterID",
+				"type": "INT64"
+			},
+			{
+				"name": "BeanVersion",
+				"type": "INT32"
+			},
+			{
+				"name": "CreateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "Retired",
+				"type": "INT64"
+			},
+			{
+				"name": "CodeDenorm",
+				"type": "UTF8"
+			},
+			{
+				"name": "Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "AppointmentDate",
+				"type": "INT96"
+			},
+			{
+				"name": "OrganizationID",
+				"type": "INT64"
+			},
+			{
+				"name": "UpdateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "AddressID",
+				"type": "INT64"
+			},
+			{
+				"name": "TerminationDate",
+				"type": "INT96"
+			},
+			{
+				"name": "UpdateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "DescriptionDenorm",
+				"type": "UTF8"
+			},
+			{
+				"name": "ID",
+				"type": "INT64"
+			},
+			{
+				"name": "Description",
+				"type": "UTF8"
+			},
+			{
+				"name": "BranchID",
+				"type": "INT64"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

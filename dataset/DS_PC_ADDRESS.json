@@ -1,0 +1,206 @@
+{
+	"name": "DS_PC_ADDRESS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/POLICY-CENTER"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "dbo_PC_ADDRESS_2023-04-17 18:18:05:028.parquet",
+				"folderPath": "2023/2023-04/2023-04-17",
+				"fileSystem": "policy-center"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "LocationName",
+				"type": "UTF8"
+			},
+			{
+				"name": "LoadCommandID",
+				"type": "INT64"
+			},
+			{
+				"name": "PublicID",
+				"type": "UTF8"
+			},
+			{
+				"name": "BatchGeocode",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "Active",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "CreateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "AddressLine1",
+				"type": "UTF8"
+			},
+			{
+				"name": "AddressLine2",
+				"type": "UTF8"
+			},
+			{
+				"name": "County",
+				"type": "UTF8"
+			},
+			{
+				"name": "AddressLine3",
+				"type": "UTF8"
+			},
+			{
+				"name": "CityKanji",
+				"type": "UTF8"
+			},
+			{
+				"name": "AddressLine2Kanji",
+				"type": "UTF8"
+			},
+			{
+				"name": "PhoneExtension",
+				"type": "UTF8"
+			},
+			{
+				"name": "State",
+				"type": "INT32"
+			},
+			{
+				"name": "AddressBookUID",
+				"type": "UTF8"
+			},
+			{
+				"name": "UpdateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "Country",
+				"type": "INT32"
+			},
+			{
+				"name": "ID",
+				"type": "INT64"
+			},
+			{
+				"name": "EmployeeCount",
+				"type": "INT32"
+			},
+			{
+				"name": "LocationCode",
+				"type": "UTF8"
+			},
+			{
+				"name": "CreateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "ValidUntil",
+				"type": "INT96"
+			},
+			{
+				"name": "PhoneCountry",
+				"type": "INT32"
+			},
+			{
+				"name": "BeanVersion",
+				"type": "INT32"
+			},
+			{
+				"name": "CityDenorm",
+				"type": "UTF8"
+			},
+			{
+				"name": "Retired",
+				"type": "INT64"
+			},
+			{
+				"name": "City",
+				"type": "UTF8"
+			},
+			{
+				"name": "LastUpdateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "Account",
+				"type": "INT64"
+			},
+			{
+				"name": "Phone",
+				"type": "UTF8"
+			},
+			{
+				"name": "AddressType",
+				"type": "INT32"
+			},
+			{
+				"name": "AddressLine1Kanji",
+				"type": "UTF8"
+			},
+			{
+				"name": "UpdateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "CEDEXBureau",
+				"type": "UTF8"
+			},
+			{
+				"name": "GeocodeStatus",
+				"type": "INT32"
+			},
+			{
+				"name": "LocationNum",
+				"type": "INT32"
+			},
+			{
+				"name": "CEDEX",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "PostalCodeDenorm",
+				"type": "UTF8"
+			},
+			{
+				"name": "PostalCode",
+				"type": "UTF8"
+			},
+			{
+				"name": "Referenced",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "Subtype",
+				"type": "INT32"
+			},
+			{
+				"name": "LinkedAddress",
+				"type": "INT64"
+			},
+			{
+				"name": "Description",
+				"type": "UTF8"
+			},
+			{
+				"name": "TemporaryLastUpdateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "NonSpecific",
+				"type": "BOOLEAN"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

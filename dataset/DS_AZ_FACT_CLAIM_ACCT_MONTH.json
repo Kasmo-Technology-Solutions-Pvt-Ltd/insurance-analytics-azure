@@ -1,0 +1,102 @@
+{
+	"name": "DS_AZ_FACT_CLAIM_ACCT_MONTH",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/CLAIM-CENTER/CC_Tables"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "FACT_CLAIM_ACCT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AGENCY_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LOCATION_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AGENT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PRODUCT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "COVERAGE_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "POLICY_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "REOPEN_DATE_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CLOSE_DATE_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "OPEN_DATE_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CLAIM_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ACCTG_PRD_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CLAIM_FEATURE_CNT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ETL_ACTIVE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "ETL_ADD_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_LAST_UPDATE_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "CCDM",
+			"table": "DW_FACT_CLAIM_ACCT_MONTH"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

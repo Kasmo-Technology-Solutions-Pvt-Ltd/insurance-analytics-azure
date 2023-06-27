@@ -1,0 +1,121 @@
+{
+	"name": "DS_DIM_DATE_CSV",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/POLICY-CENTER"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "DW_DIM_DATE.csv",
+				"folderPath": "Policy_Center_History",
+				"fileSystem": "policy-center"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "DATE_ID",
+				"type": "String"
+			},
+			{
+				"name": "DATE",
+				"type": "String"
+			},
+			{
+				"name": "FULLDATE",
+				"type": "String"
+			},
+			{
+				"name": "DAY_OF_MONTH",
+				"type": "String"
+			},
+			{
+				"name": "DAYNAME",
+				"type": "String"
+			},
+			{
+				"name": "DAY_OF_WEEK",
+				"type": "String"
+			},
+			{
+				"name": "YEAR",
+				"type": "String"
+			},
+			{
+				"name": "MONTH",
+				"type": "String"
+			},
+			{
+				"name": "MONTH_NAME",
+				"type": "String"
+			},
+			{
+				"name": "WEEK_OF_YEAR",
+				"type": "String"
+			},
+			{
+				"name": "DAY_OF_YEAR",
+				"type": "String"
+			},
+			{
+				"name": "QUARTER",
+				"type": "String"
+			},
+			{
+				"name": "MONTHYEAR",
+				"type": "String"
+			},
+			{
+				"name": "MMYYYY",
+				"type": "String"
+			},
+			{
+				"name": "YYYYMM",
+				"type": "String"
+			},
+			{
+				"name": "LASTDAYOFMONTH",
+				"type": "String"
+			},
+			{
+				"name": "LASTDAYOFYEAR",
+				"type": "String"
+			},
+			{
+				"name": "LASTDAYOFQUARTER",
+				"type": "String"
+			},
+			{
+				"name": "YEARNAME",
+				"type": "String"
+			},
+			{
+				"name": "FIRSTDAYOFMONTH",
+				"type": "String"
+			},
+			{
+				"name": "FIRSTDAYOFQUATER",
+				"type": "String"
+			},
+			{
+				"name": "FIRSTDAYOFYEAR",
+				"type": "String"
+			},
+			{
+				"name": "MONTHOFQUARTER",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

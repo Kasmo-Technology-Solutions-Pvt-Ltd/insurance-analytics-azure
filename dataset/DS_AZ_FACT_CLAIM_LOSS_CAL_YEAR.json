@@ -1,0 +1,407 @@
+{
+	"name": "DS_AZ_FACT_CLAIM_LOSS_CAL_YEAR",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/CLAIM-CENTER/CC_Tables"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "CLAIM_LOSS_CAL_YR_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ORG_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PRODUCT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "COVERAGE_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AGENT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AGENCY_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RECORD_TYPE_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ACCTG_PRD_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "LOCATION_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CURRENCY_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "OST_INDEMNITY_RESERVE_AMOUNT",
+				"type": "decimal",
+				"precision": 30,
+				"scale": 2
+			},
+			{
+				"name": "OST_MEDICAL_RESERVE_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "OST_ALAE_RESERVE_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "OST_ULAE_RESERVE_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "OST_SALVAGE_RESERVE_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "OST_SUBROGATION_RESERVE_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "MT_INDEMNITY_PAID_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "MT_MEDICAL_PAID_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "MT_ALAE_PAID_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "MT_ULAE_PAID_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "MT_DEDUCTIBLE_RECOVERY_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "MT_SALVAGE_RECOVERY_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "MT_SUBROGATION_RECOVERY_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "MT_INDEMNITY_RECOVERY_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "MT_EXP_RECOVERY_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "MT_INDEMNITY_RESERVE_CHG_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "MT_MEDICAL_RESERVE_CHG_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "MT_ALAE_RESERVE_CHG_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "MT_ULAE_RESERVE_CHG_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "MT_SALVAGE_RESERVE_CHG_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "MT_SUBROGATION_RESERVE_CHG_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "QT_INDEMNITY_PAID_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "QT_MEDICAL_PAID_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "QT_ALAE_PAID_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "QT_ULAE_PAID_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "QT_DEDUCTIBLE_RECOVERY_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "QT_SALVAGE_RECOVERY_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "QT_SUBROGATION_RECOVERY_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "QT_INDEMNITY_RECOVERY_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "QT_EXP_RECOVERY_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "QT_INDEMNITY_RESERVE_CHG_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "QT_MEDICAL_RESERVE_CHG_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "QT_ALAE_RESERVE_CHG_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "QT_ULAE_RESERVE_CHG_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "QT_SALVAGE_RESERVE_CHG_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "QT_SUBROGATION_RESERVE_CHG_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "YT_INDEMNITY_PAID_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "YT_MEDICAL_PAID_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "YT_ALAE_PAID_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "YT_ULAE_PAID_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "YT_DEDUCTIBLE_RECOVERY_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "YT_SALVAGE_RECOVERY_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "YT_SUBROGATION_RECOVERY_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "YT_INDEMNITY_RECOVERY_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "YT_EXP_RECOVERY_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "YT_INDEMNITY_RESERVE_CHG_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "YT_MEDICAL_RESERVE_CHG_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "YT_ALAE_RESERVE_CHG_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "YT_ULAE_RESERVE_CHG_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "YT_SALVAGE_RESERVE_CHG_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "YT_SUBROGATION_RESERVE_CHG_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ETL_ACTIVE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "ETL_ADD_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_LAST_UPDATE_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CURRENT_YEAR_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "CURRENT_PERIOD_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "PREVIOUS_YEAR_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "PREVIOUS_PERIOD_FLAG",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "CCDM",
+			"table": "DW_FACT_CLAIM_LOSS_CAL_YEAR"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

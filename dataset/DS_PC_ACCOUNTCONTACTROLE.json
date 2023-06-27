@@ -1,0 +1,114 @@
+{
+	"name": "DS_PC_ACCOUNTCONTACTROLE",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/POLICY-CENTER"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "dbo_PC_ACCOUNTCONTACTROLE_2023-04-17 18:18:05:028.parquet",
+				"folderPath": "2023/2023-04/2023-04-17",
+				"fileSystem": "policy-center"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "RelationshipTitle",
+				"type": "INT32"
+			},
+			{
+				"name": "YearLicensed",
+				"type": "INT32"
+			},
+			{
+				"name": "DateCompletedTrainingClass",
+				"type": "INT96"
+			},
+			{
+				"name": "CreateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "NumberofAccidents",
+				"type": "INT32"
+			},
+			{
+				"name": "PublicID",
+				"type": "UTF8"
+			},
+			{
+				"name": "IndustryCodeID",
+				"type": "INT64"
+			},
+			{
+				"name": "GoodDriverDiscount",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "BeanVersion",
+				"type": "INT32"
+			},
+			{
+				"name": "Retired",
+				"type": "INT64"
+			},
+			{
+				"name": "CreateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "BusOpsDescription",
+				"type": "UTF8"
+			},
+			{
+				"name": "NumberofViolations",
+				"type": "INT32"
+			},
+			{
+				"name": "UpdateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "AccountContact",
+				"type": "INT64"
+			},
+			{
+				"name": "UpdateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "TrainingClassType",
+				"type": "INT32"
+			},
+			{
+				"name": "Referenced",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "Subtype",
+				"type": "INT32"
+			},
+			{
+				"name": "Student",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "ID",
+				"type": "INT64"
+			},
+			{
+				"name": "OrgType",
+				"type": "UTF8"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

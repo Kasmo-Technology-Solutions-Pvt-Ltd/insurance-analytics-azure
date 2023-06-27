@@ -1,0 +1,541 @@
+{
+	"name": "date Dim Load",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy DIM DATE",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "DATE_ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "DATE_ID",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "DATE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Date",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								}
+							},
+							{
+								"source": {
+									"name": "FULLDATE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FullDate",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "DAY_OF_MONTH",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "DAY_OF_MONTH",
+									"type": "Int16",
+									"physicalType": "smallint"
+								}
+							},
+							{
+								"source": {
+									"name": "DAYNAME",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "DAYName",
+									"type": "String",
+									"physicalType": "char"
+								}
+							},
+							{
+								"source": {
+									"name": "DAY_OF_WEEK",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "DAY_OF_WEEK",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "YEAR",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "YEAR",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "MONTH",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MONTH",
+									"type": "Int16",
+									"physicalType": "smallint"
+								}
+							},
+							{
+								"source": {
+									"name": "MONTH_NAME",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MONTH_NAME",
+									"type": "String",
+									"physicalType": "char"
+								}
+							},
+							{
+								"source": {
+									"name": "WEEK_OF_YEAR",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "WEEK_OF_YEAR",
+									"type": "Int16",
+									"physicalType": "smallint"
+								}
+							},
+							{
+								"source": {
+									"name": "DAY_OF_YEAR",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "DAY_OF_YEAR",
+									"type": "Int16",
+									"physicalType": "smallint"
+								}
+							},
+							{
+								"source": {
+									"name": "QUARTER",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Quarter",
+									"type": "String",
+									"physicalType": "char"
+								}
+							},
+							{
+								"source": {
+									"name": "MONTHYEAR",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MonthYear",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "MMYYYY",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MMYYYY",
+									"type": "String",
+									"physicalType": "char"
+								}
+							},
+							{
+								"source": {
+									"name": "YYYYMM",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "YYYYMM",
+									"type": "String",
+									"physicalType": "char"
+								}
+							},
+							{
+								"source": {
+									"name": "LASTDAYOFMONTH",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "LASTDAYOFMONTH",
+									"type": "String",
+									"physicalType": "char"
+								}
+							},
+							{
+								"source": {
+									"name": "LASTDAYOFYEAR",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "LASTDAYOFYEAR",
+									"type": "String",
+									"physicalType": "char"
+								}
+							},
+							{
+								"source": {
+									"name": "LASTDAYOFQUARTER",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "LASTDAYOFQUARTER",
+									"type": "String",
+									"physicalType": "char"
+								}
+							},
+							{
+								"source": {
+									"name": "YEARNAME",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "YearName",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "FIRSTDAYOFMONTH",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FirstDayOfMonth",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "FIRSTDAYOFQUATER",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FirstDayOfQuater",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "FIRSTDAYOFYEAR",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FirstDayOfYear",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "MONTHOFQUARTER",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MonthOfQuarter",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_DIM_DATE_CSV",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_DIM_DATE",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Copy DIM MONTH",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "MONTH_ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MONTH_ID",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "MONTH_OFFSET_NUMBER",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MONTH_OFFSET_NUMBER",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "MONTH",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Month",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "MONTHNAME",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MonthName",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "QUARTER",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "QUARTER",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "YEAR",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Year",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "MONTHYEAR",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MonthYear",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "MMYYYY",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MMYYYY",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "YEARNAME",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "YearName",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "MONTHOFQUARTER",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MonthOfQuarter",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "MONTH_END_DATE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MONTH_END_DATE",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "MONTH_BEGIN_DATE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MONTH_BEGIN_DATE",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_DIM_MONTH_CSV",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_DIM_MONTH",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Insurance Analytics Azure"
+		},
+		"annotations": [],
+		"lastPublishTime": "2023-06-02T15:42:37Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

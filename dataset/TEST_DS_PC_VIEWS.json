@@ -1,0 +1,140 @@
+{
+	"name": "TEST_DS_PC_VIEWS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"File_Name": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/POLICY-CENTER"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().File_Name",
+					"type": "Expression"
+				},
+				"folderPath": "POLICY_CENTER_VIEWS_TABLES",
+				"fileSystem": "policy-center"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "PublicID",
+				"type": "UTF8"
+			},
+			{
+				"name": "CreateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "AuditFee",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "AuditFee_cur",
+				"type": "INT32"
+			},
+			{
+				"name": "PolicyID",
+				"type": "INT64"
+			},
+			{
+				"name": "Waive",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "ReceivedDate",
+				"type": "INT96"
+			},
+			{
+				"name": "RevisionType",
+				"type": "INT32"
+			},
+			{
+				"name": "UpdateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "ID",
+				"type": "INT64"
+			},
+			{
+				"name": "DueDate",
+				"type": "INT96"
+			},
+			{
+				"name": "CreateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "Instructions",
+				"type": "UTF8"
+			},
+			{
+				"name": "BeanVersion",
+				"type": "INT32"
+			},
+			{
+				"name": "Retired",
+				"type": "INT64"
+			},
+			{
+				"name": "AuditScheduleType",
+				"type": "INT32"
+			},
+			{
+				"name": "AuditPeriodEndDate",
+				"type": "INT96"
+			},
+			{
+				"name": "ActualAuditMethod",
+				"type": "INT32"
+			},
+			{
+				"name": "UpdateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "Escalated",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "AuditPeriodStartDate",
+				"type": "INT96"
+			},
+			{
+				"name": "Series",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "PolicyTermID",
+				"type": "INT64"
+			},
+			{
+				"name": "ReversalDate",
+				"type": "INT96"
+			},
+			{
+				"name": "AuditMethod",
+				"type": "INT32"
+			},
+			{
+				"name": "InitDate",
+				"type": "INT96"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

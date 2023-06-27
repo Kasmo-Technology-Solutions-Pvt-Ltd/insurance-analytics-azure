@@ -1,0 +1,13 @@
+{
+	"name": "ls_gh_sp_service",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://kasmoco.sharepoint.com/sites/DataEngineering/_api/web/GetFileByServerRelativeUrl('/sites/DataEngineering/Shared Documents/Products/Greenhouse Analytics/source_data/customer_data/service.csv')/$valuE",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}

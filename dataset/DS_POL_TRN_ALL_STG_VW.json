@@ -1,0 +1,143 @@
+{
+	"name": "DS_POL_TRN_ALL_STG_VW",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/POLICY-CENTER"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "TRANSACTION_PRO_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "TRANSACTION_TYPE_CODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TRANSACTION_CODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "WRITTEN_PREMIUM_AMT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "CHARGE_TYPECODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TOTALPREMIUMRPT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "TOTALREPORTEDPREMIUM",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "PCTL_TYPECODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TAX_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "FEE_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "SURCHARGE_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "PREM_BASIS_AMT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ACTUALAMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "TRANSACTION_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ACCTG_PRD_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TRANS_EFF_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "TRANS_EXP_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "RISK_TYPE_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "PREM_FULLY_EARNED_FL",
+				"type": "varchar"
+			},
+			{
+				"name": "CURRENCY_CODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "INFORCE_PREM_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			}
+		],
+		"typeProperties": {
+			"schema": "PCDM",
+			"table": "POL_TRN_ALL_STG_VW"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

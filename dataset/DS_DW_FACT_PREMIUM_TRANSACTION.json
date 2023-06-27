@@ -1,0 +1,246 @@
+{
+	"name": "DS_DW_FACT_PREMIUM_TRANSACTION",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/POLICY-CENTER"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "PREMIUM_TRANSACTION_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ORG_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PRODUCT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "POLICY_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LOC_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "COVG_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AGENT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AGENCY_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PRIM_NAMED_INSURED_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ACCT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "DATE_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MONTH_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ALT_PREMIUM_TRANSACTION_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "REC_TYPE_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ACCTG_PRD_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TRANSACTION_PROC_DT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TRANSACTION_EFF_DT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TRANSACTION_EXP_DT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TRANSACTION_PROC_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "RISK_TYPE_CD",
+				"type": "varchar"
+			},
+			{
+				"name": "SOURCE",
+				"type": "varchar"
+			},
+			{
+				"name": "TRANSACTION_TYPE_CD",
+				"type": "varchar"
+			},
+			{
+				"name": "TRANSACTION_CD",
+				"type": "varchar"
+			},
+			{
+				"name": "TRANSACTION_SEQ",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CURRENCY_CD",
+				"type": "varchar"
+			},
+			{
+				"name": "TRANSACTION_AMOUNT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TRANSACTION_ALLOC_CD",
+				"type": "varchar"
+			},
+			{
+				"name": "WRITTEN_PREMIUM_AMOUNT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "INFORCE_PREMIUM_AMOUNT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TAX_AMOUNT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "FEE_AMOUNT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SURCHARGE_AMOUNT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "COMMISSION_AMOUNT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "COMMISSION_PERCENT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PREMIUM_FULLY_EARNED_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "ESTIMATED_PREMIUM_AMOUNT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "REPORTED_PREMIUM_AMOUNT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AUDIT_PREMIUM_AMOUNT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PREMIUM_BASIS_AMOUNT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AUDITABLE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "ETL_ACTIVE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "ETL_ADD_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_LAST_UPDATE_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "TOTALPREMIUMRPT",
+				"type": "decimal",
+				"precision": 19,
+				"scale": 2
+			},
+			{
+				"name": "TOTALREPORTEDPREMIUM",
+				"type": "decimal",
+				"precision": 19,
+				"scale": 2
+			},
+			{
+				"name": "POLICY_STATUS_DESC_EXT",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "PCDM",
+			"table": "DW_FACT_PREMIUM_TRANSACTION"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

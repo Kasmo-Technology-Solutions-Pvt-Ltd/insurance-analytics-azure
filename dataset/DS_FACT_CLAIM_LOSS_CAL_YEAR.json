@@ -1,0 +1,301 @@
+{
+	"name": "DS_FACT_CLAIM_LOSS_CAL_YEAR",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/CLAIM-CENTER/CC_Tables"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "DW_FACT_CLAIM_LOSS_CAL_YEAR.csv",
+				"folderPath": "Claim_Center_History",
+				"fileSystem": "claim-center"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "CLAIM_LOSS_CAL_YR_ID",
+				"type": "String"
+			},
+			{
+				"name": "ORG_ID",
+				"type": "String"
+			},
+			{
+				"name": "PRODUCT_ID",
+				"type": "String"
+			},
+			{
+				"name": "COVERAGE_ID",
+				"type": "String"
+			},
+			{
+				"name": "AGENT_ID",
+				"type": "String"
+			},
+			{
+				"name": "AGENCY_ID",
+				"type": "String"
+			},
+			{
+				"name": "RECORD_TYPE_ID",
+				"type": "String"
+			},
+			{
+				"name": "ACCTG_PRD_ID",
+				"type": "String"
+			},
+			{
+				"name": "LOCATION_ID",
+				"type": "String"
+			},
+			{
+				"name": "CURRENCY_CODE",
+				"type": "String"
+			},
+			{
+				"name": "OST_INDEMNITY_RESERVE_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "OST_MEDICAL_RESERVE_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "OST_ALAE_RESERVE_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "OST_ULAE_RESERVE_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "OST_SALVAGE_RESERVE_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "OST_SUBROGATION_RESERVE_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "MT_INDEMNITY_PAID_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "MT_MEDICAL_PAID_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "MT_ALAE_PAID_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "MT_ULAE_PAID_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "MT_DEDUCTIBLE_RECOVERY_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "MT_SALVAGE_RECOVERY_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "MT_SUBROGATION_RECOVERY_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "MT_INDEMNITY_RECOVERY_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "MT_EXP_RECOVERY_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "MT_INDEMNITY_RESERVE_CHG_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "MT_MEDICAL_RESERVE_CHG_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "MT_ALAE_RESERVE_CHG_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "MT_ULAE_RESERVE_CHG_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "MT_SALVAGE_RESERVE_CHG_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "MT_SUBROGATION_RESERVE_CHG_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "QT_INDEMNITY_PAID_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "QT_MEDICAL_PAID_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "QT_ALAE_PAID_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "QT_ULAE_PAID_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "QT_DEDUCTIBLE_RECOVERY_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "QT_SALVAGE_RECOVERY_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "QT_SUBROGATION_RECOVERY_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "QT_INDEMNITY_RECOVERY_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "QT_EXP_RECOVERY_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "QT_INDEMNITY_RESERVE_CHG_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "QT_MEDICAL_RESERVE_CHG_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "QT_ALAE_RESERVE_CHG_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "QT_ULAE_RESERVE_CHG_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "QT_SALVAGE_RESERVE_CHG_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "QT_SUBROGATION_RESERVE_CHG_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "YT_INDEMNITY_PAID_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "YT_MEDICAL_PAID_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "YT_ALAE_PAID_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "YT_ULAE_PAID_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "YT_DEDUCTIBLE_RECOVERY_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "YT_SALVAGE_RECOVERY_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "YT_SUBROGATION_RECOVERY_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "YT_INDEMNITY_RECOVERY_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "YT_EXP_RECOVERY_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "YT_INDEMNITY_RESERVE_CHG_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "YT_MEDICAL_RESERVE_CHG_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "YT_ALAE_RESERVE_CHG_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "YT_ULAE_RESERVE_CHG_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "YT_SALVAGE_RESERVE_CHG_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "YT_SUBROGATION_RESERVE_CHG_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "ETL_ACTIVE_FLAG",
+				"type": "String"
+			},
+			{
+				"name": "ETL_ADD_DATETIMESTAMP",
+				"type": "String"
+			},
+			{
+				"name": "ETL_LAST_UPDATE_DATETIMESTAMP",
+				"type": "String"
+			},
+			{
+				"name": "CURRENT_YEAR_FLAG",
+				"type": "String"
+			},
+			{
+				"name": "CURRENT_PERIOD_FLAG",
+				"type": "String"
+			},
+			{
+				"name": "PREVIOUS_YEAR_FLAG",
+				"type": "String"
+			},
+			{
+				"name": "PREVIOUS_PERIOD_FLAG",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

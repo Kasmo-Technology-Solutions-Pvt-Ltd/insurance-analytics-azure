@@ -1,0 +1,264 @@
+{
+	"name": "DS_DW_DIM_CLAIM_FEATURE",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/CLAIM-CENTER"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "CLAIM_FEATURE_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SOURCE",
+				"type": "varchar"
+			},
+			{
+				"name": "CLAIM_KEY",
+				"type": "varchar"
+			},
+			{
+				"name": "CLAIMANT_KEY",
+				"type": "varchar"
+			},
+			{
+				"name": "FEATURE_KEY",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST_STATUS_ID",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "LAST_STATUS_PROC_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "COVERAGE_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "FEATURE_SETUP_DATE",
+				"type": "date"
+			},
+			{
+				"name": "FEATURE_REPORTED_DATE",
+				"type": "date"
+			},
+			{
+				"name": "SUIT_FLAG",
+				"type": "bit"
+			},
+			{
+				"name": "ADJUSTER_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "ETL_ROW_EFF_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_ROW_EXPOSURE_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_ADD_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_LAST_UPDATE_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_ACTIVE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "EXPOSURE_CLAIMANTTYPE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "EXPOSURE_STATE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "EXPOSURE_ASSIGNEDUSERID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "EXPOSURE_PREVIOUSUSERID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "COV_EXPOSURELIMIT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "COV_SUBTYPE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CASENUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "COV_TYPE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "EVL_CREATETIME",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "NEG_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "NEG_TYPE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "NEG_AMOUNT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "EXPOSURE_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "EXPOSURE_CREATETIME",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "EXPOSURE_CLOSEDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "EXPOSURE_REOPENDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "EXPOSURE_CLOSEDOUTCOME",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "EXPOSURE_SUPERVISORID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "EXPOSURE_SUPERVISORNAME",
+				"type": "varchar"
+			},
+			{
+				"name": "EXPOSURE_ASSIGNEDUSERNAME",
+				"type": "varchar"
+			},
+			{
+				"name": "COVERAGE_EXPIREDDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "MAT_SENTTODEFENSEDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "EXPOSURE_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "COV_SUBTYPE_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "COV_TYPE_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "EXPOSURE_CLAIMANTTYPE_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "EXPOSURE_CLOSEDOUTCOME_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "EXPOSURE_STATE_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "NEG_TYPE_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "EXT_FIRST_OFR_AMT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "EXT_LAST_OFR_AMT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "EXT_FIRST_DMD_AMT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "EXT_LAST_DMD_AMT",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "CCDM",
+			"table": "DW_DIM_CLAIM_FEATURE"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

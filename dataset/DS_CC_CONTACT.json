@@ -1,0 +1,376 @@
+{
+	"name": "DS_CC_CONTACT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/CLAIM-CENTER"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "dbo_CC_CONTACT_2023-04-17 17:38:03:549.parquet",
+				"folderPath": "2023/2023-04/2023-04-17",
+				"fileSystem": "claim-center"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "ValidationLevel",
+				"type": "INT32"
+			},
+			{
+				"name": "LawFirmSpecialty",
+				"type": "INT32"
+			},
+			{
+				"name": "Retired",
+				"type": "INT64"
+			},
+			{
+				"name": "FirstNameKanji",
+				"type": "UTF8"
+			},
+			{
+				"name": "EmailAddress2",
+				"type": "UTF8"
+			},
+			{
+				"name": "SpecialtyType",
+				"type": "INT32"
+			},
+			{
+				"name": "EmailAddress1",
+				"type": "UTF8"
+			},
+			{
+				"name": "LastName",
+				"type": "UTF8"
+			},
+			{
+				"name": "FaxPhoneExtension",
+				"type": "UTF8"
+			},
+			{
+				"name": "AutoSync",
+				"type": "INT32"
+			},
+			{
+				"name": "Admin",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "HomePhone",
+				"type": "UTF8"
+			},
+			{
+				"name": "TaxID",
+				"type": "UTF8"
+			},
+			{
+				"name": "W9ReceivedDate",
+				"type": "INT96"
+			},
+			{
+				"name": "LicenseNumber",
+				"type": "UTF8"
+			},
+			{
+				"name": "PrimaryPhone",
+				"type": "INT32"
+			},
+			{
+				"name": "AdjudicatorLicense",
+				"type": "UTF8"
+			},
+			{
+				"name": "AutoRepairLicense",
+				"type": "UTF8"
+			},
+			{
+				"name": "AutoTowingLicense",
+				"type": "UTF8"
+			},
+			{
+				"name": "ID",
+				"type": "INT64"
+			},
+			{
+				"name": "W9Received",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "BeanVersion",
+				"type": "INT32"
+			},
+			{
+				"name": "PrimaryLocale",
+				"type": "INT32"
+			},
+			{
+				"name": "Score",
+				"type": "INT32"
+			},
+			{
+				"name": "NameDenorm",
+				"type": "UTF8"
+			},
+			{
+				"name": "AddressBookUID",
+				"type": "UTF8"
+			},
+			{
+				"name": "PrimaryLanguage",
+				"type": "INT32"
+			},
+			{
+				"name": "AttorneySpecialty",
+				"type": "INT32"
+			},
+			{
+				"name": "DoctorSpecialty",
+				"type": "INT32"
+			},
+			{
+				"name": "Suffix",
+				"type": "INT32"
+			},
+			{
+				"name": "FormerName",
+				"type": "UTF8"
+			},
+			{
+				"name": "NumDependents",
+				"type": "INT32"
+			},
+			{
+				"name": "Prefix",
+				"type": "INT32"
+			},
+			{
+				"name": "NameKanji",
+				"type": "UTF8"
+			},
+			{
+				"name": "HomePhoneCountry",
+				"type": "INT32"
+			},
+			{
+				"name": "TaxFilingStatus",
+				"type": "INT32"
+			},
+			{
+				"name": "Notes",
+				"type": "UTF8"
+			},
+			{
+				"name": "PolicySystemId",
+				"type": "UTF8"
+			},
+			{
+				"name": "DateOfBirth",
+				"type": "INT96"
+			},
+			{
+				"name": "Subtype",
+				"type": "INT32"
+			},
+			{
+				"name": "CellPhoneCountry",
+				"type": "INT32"
+			},
+			{
+				"name": "AdjudicativeDomain",
+				"type": "INT32"
+			},
+			{
+				"name": "CellPhone",
+				"type": "UTF8"
+			},
+			{
+				"name": "MedicalOrgSpecialty",
+				"type": "INT32"
+			},
+			{
+				"name": "Gender",
+				"type": "INT32"
+			},
+			{
+				"name": "FaxPhoneCountry",
+				"type": "INT32"
+			},
+			{
+				"name": "FaxPhone",
+				"type": "UTF8"
+			},
+			{
+				"name": "VendorNumber",
+				"type": "UTF8"
+			},
+			{
+				"name": "AttorneyLicense",
+				"type": "UTF8"
+			},
+			{
+				"name": "CellPhoneExtension",
+				"type": "UTF8"
+			},
+			{
+				"name": "VendorType",
+				"type": "INT32"
+			},
+			{
+				"name": "TaxStatus",
+				"type": "INT32"
+			},
+			{
+				"name": "EmployeeNumber",
+				"type": "UTF8"
+			},
+			{
+				"name": "WorkPhone",
+				"type": "UTF8"
+			},
+			{
+				"name": "NumDependentsU25",
+				"type": "INT32"
+			},
+			{
+				"name": "HomePhoneExtension",
+				"type": "UTF8"
+			},
+			{
+				"name": "Particle",
+				"type": "UTF8"
+			},
+			{
+				"name": "PublicID",
+				"type": "UTF8"
+			},
+			{
+				"name": "ArchivePartition",
+				"type": "INT64"
+			},
+			{
+				"name": "W9ValidTo",
+				"type": "INT96"
+			},
+			{
+				"name": "PendingLinkMessage",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "CreateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "Occupation",
+				"type": "UTF8"
+			},
+			{
+				"name": "LoadRelatedContacts",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "VenueType",
+				"type": "INT32"
+			},
+			{
+				"name": "FirstName",
+				"type": "UTF8"
+			},
+			{
+				"name": "LastNameDenorm",
+				"type": "UTF8"
+			},
+			{
+				"name": "MaritalStatus",
+				"type": "INT32"
+			},
+			{
+				"name": "NumDependentsU18",
+				"type": "INT32"
+			},
+			{
+				"name": "PrimaryAddressID",
+				"type": "INT64"
+			},
+			{
+				"name": "FirstNameDenorm",
+				"type": "UTF8"
+			},
+			{
+				"name": "WorkPhoneCountry",
+				"type": "INT32"
+			},
+			{
+				"name": "UpdateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "WorkPhoneExtension",
+				"type": "UTF8"
+			},
+			{
+				"name": "LoadCommandID",
+				"type": "INT64"
+			},
+			{
+				"name": "UpdateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "LicenseState",
+				"type": "INT32"
+			},
+			{
+				"name": "Name",
+				"type": "UTF8"
+			},
+			{
+				"name": "PreferredCurrency",
+				"type": "INT32"
+			},
+			{
+				"name": "MedicalLicense",
+				"type": "UTF8"
+			},
+			{
+				"name": "MiddleName",
+				"type": "UTF8"
+			},
+			{
+				"name": "LastNameKanji",
+				"type": "UTF8"
+			},
+			{
+				"name": "WithholdingRate",
+				"type": "DECIMAL",
+				"precision": 4,
+				"scale": 1
+			},
+			{
+				"name": "OrganizationType",
+				"type": "INT32"
+			},
+			{
+				"name": "CreateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "W9ValidFrom",
+				"type": "INT96"
+			},
+			{
+				"name": "Preferred",
+				"type": "BOOLEAN"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,67 @@
+{
+	"name": "DS_DIM_VEHICLE_INCIDENT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/CLAIM-CENTER/CC_Tables"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "VEHICLE_INCIDENT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SOURCE",
+				"type": "varchar"
+			},
+			{
+				"name": "ICDNT_KEY",
+				"type": "varchar"
+			},
+			{
+				"name": "VEHICLE_MAKE",
+				"type": "varchar"
+			},
+			{
+				"name": "VEHICLE_MODEL",
+				"type": "varchar"
+			},
+			{
+				"name": "VEHICLE_VIN",
+				"type": "varchar"
+			},
+			{
+				"name": "VEHICLE_YEAR",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ETL_LAST_UPDATE_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_ADD_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_ACTIVE_FLAG",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "CCDM",
+			"table": "DW_DIM_VEHICLE_INCIDENT"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

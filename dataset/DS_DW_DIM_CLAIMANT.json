@@ -1,0 +1,94 @@
+{
+	"name": "DS_DW_DIM_CLAIMANT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/CLAIM-CENTER"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "CLAIMANT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SOURCE",
+				"type": "varchar"
+			},
+			{
+				"name": "CLAIM_KEY",
+				"type": "varchar"
+			},
+			{
+				"name": "CLAIMANT_KEY",
+				"type": "varchar"
+			},
+			{
+				"name": "CLAIMANT_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "CLAIMANT_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "CLAIMANT_ADDR_1",
+				"type": "varchar"
+			},
+			{
+				"name": "CLAIMANT_ADDR_2",
+				"type": "varchar"
+			},
+			{
+				"name": "CLAIMANT_ADDR_3",
+				"type": "varchar"
+			},
+			{
+				"name": "CLAIMANT_CITY",
+				"type": "varchar"
+			},
+			{
+				"name": "CLAIMANT_COUNTY",
+				"type": "varchar"
+			},
+			{
+				"name": "CLAIMANT_STATE_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "CLAIMANT_STATE_CODE_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "CLAIMANT_ZIP_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "ETL_ADD_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_LAST_UPDATE_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_ACTIVE_FLAG",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "CCDM",
+			"table": "DW_DIM_CLAIMANT"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

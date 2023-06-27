@@ -1,0 +1,294 @@
+{
+	"name": "DS_DIM_CLAIM",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/CLAIM-CENTER/CC_Tables"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "CLAIM_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SOURCE",
+				"type": "varchar"
+			},
+			{
+				"name": "CLAIM_BASE_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CLAIM_KEY",
+				"type": "varchar"
+			},
+			{
+				"name": "POL_KEY",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST_STATUS_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LAST_STATUS_PROC_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CLAIM_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "ROW_PROC_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "LOSS_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "LOSS_YEAR",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "REPORTED_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "REPORTED_YEAR",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SETUP_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "LOSS_TEXT",
+				"type": "varchar"
+			},
+			{
+				"name": "EXAMINER_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "EXAMINER_CODE_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "LOSS_CITY",
+				"type": "varchar"
+			},
+			{
+				"name": "LOSS_STATE_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "LOSS_STATE_CODE_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "LOSS_ZIP_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "LOSS_TYPE_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "LOSS_TYPE_CODE_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "CAUSE_OF_LOSS_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "CAUSE_OF_LOSS_CODE_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "FAST_TRACK_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "CATASTROPHE_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "CATASTROPHE_CODE_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "CATASTROPHE_DECLARE_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_ADD_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_LAST_UPDATE_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_ACTIVE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "CLAIM_ASSIGNMENTDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CLAIM_CLOSEDOUTCOME",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CLAIM_CLAIMTIER",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CLAIM_LITIGATIONSTATUS",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CLAIM_SUBROGATIONSTATUS",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SUPERVISORNAME",
+				"type": "varchar"
+			},
+			{
+				"name": "LITIGATION_STARTDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CLAIM_ASSIGNEDNAME",
+				"type": "varchar"
+			},
+			{
+				"name": "CLAIM_ASSIGNEDCITY",
+				"type": "varchar"
+			},
+			{
+				"name": "CLAIM_ASSIGNEDSTATE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CLAIM_CLOSEDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CLAIM_REOPENDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CLAIM_ASSIGNEDUSERID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CLAIM_SUPERVISORID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SUB_UPDATEUSERID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SUB_UPDATEUSERNAME",
+				"type": "varchar"
+			},
+			{
+				"name": "CLAIM_CLOSEDOUTCOME_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "CLAIM_LITIGATIONSTATUS_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "CLAIM_SIESCALATESIU_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "CLAIM_STATE_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "CLAIM_SUBROGATIONSTATUS_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "EXT_ASSNDUSR_MAIL",
+				"type": "varchar"
+			},
+			{
+				"name": "PREVIOUSUSERID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CLAIM_ASSIGNEDSTATE_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "OPEN_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CLAIM_ACTIVE_DAYS",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "CCDM",
+			"table": "DW_DIM_CLAIM"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

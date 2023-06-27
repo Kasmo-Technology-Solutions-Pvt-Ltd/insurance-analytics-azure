@@ -1,0 +1,40 @@
+{
+	"name": "DS_ETL_CLAIMANT_CDC",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/CLAIM-CENTER/CC_Tables"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "dbo_ETL_CLAIMANT_CDC_2023-04-17 17:38:03:549.parquet",
+				"folderPath": "2023/2023-04/2023-04-17",
+				"fileSystem": "claim-center"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "ID",
+				"type": "DECIMAL",
+				"precision": 19,
+				"scale": 0
+			},
+			{
+				"name": "UPDATETIME",
+				"type": "INT96"
+			},
+			{
+				"name": "CCLAIM_PUBLICID",
+				"type": "UTF8"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

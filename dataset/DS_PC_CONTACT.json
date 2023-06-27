@@ -1,0 +1,344 @@
+{
+	"name": "DS_PC_CONTACT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/POLICY-CENTER"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "dbo_PC_CONTACT_2023-04-17 18:18:05:028.parquet",
+				"folderPath": "2023/2023-04/2023-04-17",
+				"fileSystem": "policy-center"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "LoadCommandID",
+				"type": "INT64"
+			},
+			{
+				"name": "Preferred",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "VendorType",
+				"type": "INT32"
+			},
+			{
+				"name": "FaxPhoneCountry",
+				"type": "INT32"
+			},
+			{
+				"name": "Particle",
+				"type": "UTF8"
+			},
+			{
+				"name": "TaxID",
+				"type": "UTF8"
+			},
+			{
+				"name": "NameDenorm",
+				"type": "UTF8"
+			},
+			{
+				"name": "Name",
+				"type": "UTF8"
+			},
+			{
+				"name": "VendorNumber",
+				"type": "UTF8"
+			},
+			{
+				"name": "State",
+				"type": "INT32"
+			},
+			{
+				"name": "Prefix",
+				"type": "INT32"
+			},
+			{
+				"name": "Score",
+				"type": "INT32"
+			},
+			{
+				"name": "PreferredCurrency",
+				"type": "INT32"
+			},
+			{
+				"name": "LastNameKanji",
+				"type": "UTF8"
+			},
+			{
+				"name": "TaxFilingStatus",
+				"type": "INT32"
+			},
+			{
+				"name": "AccountHolderCount",
+				"type": "INT32"
+			},
+			{
+				"name": "Country",
+				"type": "INT32"
+			},
+			{
+				"name": "UpdateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "AdjudicatorLicense",
+				"type": "UTF8"
+			},
+			{
+				"name": "ID",
+				"type": "INT64"
+			},
+			{
+				"name": "WithholdingRate",
+				"type": "DECIMAL",
+				"precision": 4,
+				"scale": 1
+			},
+			{
+				"name": "LastNameDenorm",
+				"type": "UTF8"
+			},
+			{
+				"name": "MiddleName",
+				"type": "UTF8"
+			},
+			{
+				"name": "LastName",
+				"type": "UTF8"
+			},
+			{
+				"name": "CreateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "ExternalID",
+				"type": "UTF8"
+			},
+			{
+				"name": "BeanVersion",
+				"type": "INT32"
+			},
+			{
+				"name": "VenueType",
+				"type": "INT32"
+			},
+			{
+				"name": "Retired",
+				"type": "INT64"
+			},
+			{
+				"name": "ValidationLevel",
+				"type": "INT32"
+			},
+			{
+				"name": "PrimaryPhone",
+				"type": "INT32"
+			},
+			{
+				"name": "LastUpdateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "ExternalVersion",
+				"type": "INT32"
+			},
+			{
+				"name": "UpdateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "HomePhoneExtension",
+				"type": "UTF8"
+			},
+			{
+				"name": "FirstNameDenorm",
+				"type": "UTF8"
+			},
+			{
+				"name": "FirstName",
+				"type": "UTF8"
+			},
+			{
+				"name": "FirstNameKanji",
+				"type": "UTF8"
+			},
+			{
+				"name": "TemporaryLastUpdateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "Gender",
+				"type": "INT32"
+			},
+			{
+				"name": "Notes",
+				"type": "UTF8"
+			},
+			{
+				"name": "NumDependentsU18",
+				"type": "INT32"
+			},
+			{
+				"name": "PublicID",
+				"type": "UTF8"
+			},
+			{
+				"name": "HomePhoneCountry",
+				"type": "INT32"
+			},
+			{
+				"name": "CityKanjiDenorm",
+				"type": "UTF8"
+			},
+			{
+				"name": "CreateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "LicenseNumber",
+				"type": "UTF8"
+			},
+			{
+				"name": "CellPhoneCountry",
+				"type": "INT32"
+			},
+			{
+				"name": "AutoSync",
+				"type": "INT32"
+			},
+			{
+				"name": "Occupation",
+				"type": "UTF8"
+			},
+			{
+				"name": "CellPhone",
+				"type": "UTF8"
+			},
+			{
+				"name": "PrimaryAddressID",
+				"type": "INT64"
+			},
+			{
+				"name": "Suffix",
+				"type": "INT32"
+			},
+			{
+				"name": "AddressBookUID",
+				"type": "UTF8"
+			},
+			{
+				"name": "LoadRelatedContacts",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "EmailAddress1",
+				"type": "UTF8"
+			},
+			{
+				"name": "NumDependents",
+				"type": "INT32"
+			},
+			{
+				"name": "DateOfBirth",
+				"type": "INT96"
+			},
+			{
+				"name": "PrimaryLanguage",
+				"type": "INT32"
+			},
+			{
+				"name": "EmailAddress2",
+				"type": "UTF8"
+			},
+			{
+				"name": "PrimaryLocale",
+				"type": "INT32"
+			},
+			{
+				"name": "TaxStatus",
+				"type": "INT32"
+			},
+			{
+				"name": "NumDependentsU25",
+				"type": "INT32"
+			},
+			{
+				"name": "WorkPhoneExtension",
+				"type": "UTF8"
+			},
+			{
+				"name": "MaritalStatus",
+				"type": "INT32"
+			},
+			{
+				"name": "CityDenorm",
+				"type": "UTF8"
+			},
+			{
+				"name": "NameKanji",
+				"type": "UTF8"
+			},
+			{
+				"name": "FaxPhoneExtension",
+				"type": "UTF8"
+			},
+			{
+				"name": "HomePhone",
+				"type": "UTF8"
+			},
+			{
+				"name": "LicenseState",
+				"type": "INT32"
+			},
+			{
+				"name": "FaxPhone",
+				"type": "UTF8"
+			},
+			{
+				"name": "CellPhoneExtension",
+				"type": "UTF8"
+			},
+			{
+				"name": "PostalCodeDenorm",
+				"type": "UTF8"
+			},
+			{
+				"name": "EmployeeNumber",
+				"type": "UTF8"
+			},
+			{
+				"name": "WorkPhoneCountry",
+				"type": "INT32"
+			},
+			{
+				"name": "Subtype",
+				"type": "INT32"
+			},
+			{
+				"name": "PreferredSettlementCurrency",
+				"type": "INT32"
+			},
+			{
+				"name": "FormerName",
+				"type": "UTF8"
+			},
+			{
+				"name": "WorkPhone",
+				"type": "UTF8"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

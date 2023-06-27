@@ -1,0 +1,138 @@
+{
+	"name": "DS_PC_UWISSUE",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/POLICY-CENTER"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "dbo_PC_UWISSUE_2023-04-17 18:18:05:028.parquet",
+				"folderPath": "2023/2023-04/2023-04-17",
+				"fileSystem": "policy-center"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "LongDescription",
+				"type": "UTF8"
+			},
+			{
+				"name": "ShortDescription",
+				"type": "UTF8"
+			},
+			{
+				"name": "PublicID",
+				"type": "UTF8"
+			},
+			{
+				"name": "Active",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "HasApprovalOrRejection",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "CreateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "ApprovalValue",
+				"type": "UTF8"
+			},
+			{
+				"name": "FixedID",
+				"type": "INT64"
+			},
+			{
+				"name": "ApprovalDurationType",
+				"type": "INT32"
+			},
+			{
+				"name": "ApprovingUser",
+				"type": "INT64"
+			},
+			{
+				"name": "EffectiveDate",
+				"type": "INT96"
+			},
+			{
+				"name": "UpdateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "ApprovalBlockingPoint",
+				"type": "INT32"
+			},
+			{
+				"name": "CanEditApprovalBeforeBind",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "ID",
+				"type": "INT64"
+			},
+			{
+				"name": "ExpirationDate",
+				"type": "INT96"
+			},
+			{
+				"name": "CreateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "IssueKey",
+				"type": "UTF8"
+			},
+			{
+				"name": "ArchivePartition",
+				"type": "INT64"
+			},
+			{
+				"name": "BeanVersion",
+				"type": "INT32"
+			},
+			{
+				"name": "ChangeType",
+				"type": "INT32"
+			},
+			{
+				"name": "BasedOnID",
+				"type": "INT64"
+			},
+			{
+				"name": "IssueTypeID",
+				"type": "INT64"
+			},
+			{
+				"name": "UpdateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "Valuee",
+				"type": "UTF8"
+			},
+			{
+				"name": "AutomaticApprovalCause",
+				"type": "UTF8"
+			},
+			{
+				"name": "BranchID",
+				"type": "INT64"
+			},
+			{
+				"name": "ApprovalInvalidFrom",
+				"type": "INT96"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

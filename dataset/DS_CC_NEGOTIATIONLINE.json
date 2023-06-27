@@ -1,0 +1,88 @@
+{
+	"name": "DS_CC_NEGOTIATIONLINE",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/CLAIM-CENTER"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "dbo_CC_NEGOTIATIONLINE_2023-04-17 17:38:03:549.parquet",
+				"folderPath": "2023/2023-04/2023-04-17",
+				"fileSystem": "claim-center"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "Amount",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "Retired",
+				"type": "INT64"
+			},
+			{
+				"name": "Type",
+				"type": "INT32"
+			},
+			{
+				"name": "LoadCommandID",
+				"type": "INT64"
+			},
+			{
+				"name": "UpdateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "Note",
+				"type": "UTF8"
+			},
+			{
+				"name": "PublicID",
+				"type": "UTF8"
+			},
+			{
+				"name": "ArchivePartition",
+				"type": "INT64"
+			},
+			{
+				"name": "CreateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "NegotiationDate",
+				"type": "INT96"
+			},
+			{
+				"name": "CreateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "ID",
+				"type": "INT64"
+			},
+			{
+				"name": "BeanVersion",
+				"type": "INT32"
+			},
+			{
+				"name": "NegotiationID",
+				"type": "INT64"
+			},
+			{
+				"name": "UpdateUserID",
+				"type": "INT64"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

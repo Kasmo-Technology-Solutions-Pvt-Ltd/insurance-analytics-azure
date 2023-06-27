@@ -1,0 +1,59 @@
+{
+	"name": "policyCenterFactMaster",
+	"properties": {
+		"activities": [
+			{
+				"name": "factPremiumTransaction",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pc_fact_premiumtransaction",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "factPremiumPolYear",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "factPremiumTransaction",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pc_agg_premiumpolyear",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "factEarnedPremium",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pc_fact_earnedpremium",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"folder": {
+			"name": "Insurance Analytics Azure"
+		},
+		"annotations": [],
+		"lastPublishTime": "2023-06-02T15:42:38Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,113 @@
+{
+	"name": "DIM_ACCOUNT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/POLICY-CENTER"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ACCOUNT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SOURCE",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCOUNT_KEY",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCOUNT_BASE_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ACCOUNT_NO",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCOUNT_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "MAILING_ADDRESS_1",
+				"type": "varchar"
+			},
+			{
+				"name": "MAILING_ADDRESS_2",
+				"type": "varchar"
+			},
+			{
+				"name": "MAILING_ADDRESS_3",
+				"type": "varchar"
+			},
+			{
+				"name": "MAILING_CITY",
+				"type": "varchar"
+			},
+			{
+				"name": "MAILING_STATE_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "MAILING_STATE_SHORT_TEXT",
+				"type": "varchar"
+			},
+			{
+				"name": "MAILING_STATE_LONG_TEXT",
+				"type": "varchar"
+			},
+			{
+				"name": "MAILING_ZIP_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCOUNTORGTYPE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ACCOUNTSTATUS",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ETL_LAST_UPDATE_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_ADD_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_ACTIVE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCOUNTORGTYPE_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCOUNTSTATUS_DESCRIPTION",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "PCDM",
+			"table": "DW_DIM_ACCOUNT"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

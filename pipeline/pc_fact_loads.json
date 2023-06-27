@@ -1,0 +1,571 @@
+{
+	"name": "pc_fact_loads",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy FACT_PREMIUM_POLYEAR",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "PREMIUM_POL_YEAR_ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PREMIUM_POL_YEAR_ID",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "ORG_ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ORG_ID",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "PRODUCT_ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PRODUCT_ID",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "AGENT_ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "AGENT_ID",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "AGENCY_ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "AGENCY_ID",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "RECORD_TYPE_ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "RECORD_TYPE_ID",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "POLICY_ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "POLICY_ID",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "LOCATION_ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "LOCATION_ID",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCTG_PRD_ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ACCTG_PRD_ID",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "CURRENCY_CODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CURRENCY_CODE",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "POL_YEAR",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "POL_YEAR",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "POLICY_STATUS_ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "POLICY_STATUS_ID",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "INFORCE_PREMIUM_AMOUNT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "INFORCE_PREMIUM_AMOUNT",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 18
+								}
+							},
+							{
+								"source": {
+									"name": "WRITTEN_PREMIUM_AMOUNT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "WRITTEN_PREMIUM_AMOUNT",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 18
+								}
+							},
+							{
+								"source": {
+									"name": "AUDIT_PREMIUM_AMOUNT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "AUDIT_PREMIUM_AMOUNT",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 18
+								}
+							},
+							{
+								"source": {
+									"name": "CANCEL_PREMIUM_AMOUNT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CANCEL_PREMIUM_AMOUNT",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 18
+								}
+							},
+							{
+								"source": {
+									"name": "FEE_AMOUNT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FEE_AMOUNT",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 18
+								}
+							},
+							{
+								"source": {
+									"name": "TAX_AMOUNT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "TAX_AMOUNT",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 18
+								}
+							},
+							{
+								"source": {
+									"name": "SURCHARGE_AMOUNT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "SURCHARGE_AMOUNT",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 18
+								}
+							},
+							{
+								"source": {
+									"name": "NEW_BUSINESS_PREMIUM_AMOUNT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "NEW_BUSINESS_PREMIUM_AMOUNT",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 18
+								}
+							},
+							{
+								"source": {
+									"name": "RENEW_BUSINESS_PREMIUM_AMOUNT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "RENEW_BUSINESS_PREMIUM_AMOUNT",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 18
+								}
+							},
+							{
+								"source": {
+									"name": "ENDORSEMENT_PREMIUM_AMOUNT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ENDORSEMENT_PREMIUM_AMOUNT",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 18
+								}
+							},
+							{
+								"source": {
+									"name": "REINSTATED_PREMIUM_AMOUNT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "REINSTATED_PREMIUM_AMOUNT",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 18
+								}
+							},
+							{
+								"source": {
+									"name": "COMMISSION_AMOUNT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "COMMISSION_AMOUNT",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 18
+								}
+							},
+							{
+								"source": {
+									"name": "ETL_ACTIVE_FLAG",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ETL_ACTIVE_FLAG",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ETL_ADD_DATETIME",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ETL_ADD_DATETIME",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								}
+							},
+							{
+								"source": {
+									"name": "ETL_LAST_UPDATE_DATETIME",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ETL_LAST_UPDATE_DATETIME",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_FACT_PREMIUM_POL_YEAR",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_FACT_PREMIUM_POLYEAR",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Copy FACT_EARNED_PREMIUM",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_FACT_EARNED_PREMIUM",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_AZ_FACT_EARNED_PREMIUM",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Copy FACT_PREMIUM_CALYEAR",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_FACT_PREMIUM_CALYEAR",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_AZ_FACT_PREMIUM_CALYEAR",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Copy FACT_PREMOIUM_TRANSACTION",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_FACT_PREMIUM_TRANSACTION",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_AZ_FACT_PREMIUM_TRANSACTION",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Insurance Analytics Azure/PC Pipelines"
+		},
+		"annotations": [],
+		"lastPublishTime": "2023-06-02T17:08:18Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

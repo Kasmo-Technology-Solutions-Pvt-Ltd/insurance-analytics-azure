@@ -1,0 +1,58 @@
+{
+	"name": "DS_CCTL_INCIDENT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/CLAIM-CENTER"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "dbo_CCTL_INCIDENT_2023-04-17 17:38:03:549.parquet",
+				"folderPath": "2023/2023-04/2023-04-17",
+				"fileSystem": "claim-center"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "L_en_US",
+				"type": "UTF8"
+			},
+			{
+				"name": "PRIORITY",
+				"type": "INT32"
+			},
+			{
+				"name": "TYPECODE",
+				"type": "UTF8"
+			},
+			{
+				"name": "S_en_US",
+				"type": "INT32"
+			},
+			{
+				"name": "RETIRED",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "NAME",
+				"type": "UTF8"
+			},
+			{
+				"name": "ID",
+				"type": "INT32"
+			},
+			{
+				"name": "DESCRIPTION",
+				"type": "UTF8"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

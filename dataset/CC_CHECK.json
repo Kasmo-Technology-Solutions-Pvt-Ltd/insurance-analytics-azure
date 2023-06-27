@@ -1,0 +1,220 @@
+{
+	"name": "CC_CHECK",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/CLAIM-CENTER/CC_Tables/CC_Tables"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "dbo_CC_CHECK_2023-04-17 17:38:03:549.parquet",
+				"folderPath": "2023/2023-04/2023-04-17",
+				"fileSystem": "claim-center"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "IssueDate",
+				"type": "INT96"
+			},
+			{
+				"name": "PortionID",
+				"type": "INT64"
+			},
+			{
+				"name": "Retired",
+				"type": "INT64"
+			},
+			{
+				"name": "CheckNumber",
+				"type": "UTF8"
+			},
+			{
+				"name": "DeductionType",
+				"type": "INT32"
+			},
+			{
+				"name": "ServicePdStart",
+				"type": "INT96"
+			},
+			{
+				"name": "PublicID",
+				"type": "UTF8"
+			},
+			{
+				"name": "BankName",
+				"type": "UTF8"
+			},
+			{
+				"name": "DateOfService",
+				"type": "INT96"
+			},
+			{
+				"name": "GroupID",
+				"type": "INT64"
+			},
+			{
+				"name": "ClaimContactID",
+				"type": "INT64"
+			},
+			{
+				"name": "ArchivePartition",
+				"type": "INT64"
+			},
+			{
+				"name": "BankAccountType",
+				"type": "INT32"
+			},
+			{
+				"name": "CreateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "PendEscalationForBulk",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "CheckInstructions",
+				"type": "INT32"
+			},
+			{
+				"name": "ID",
+				"type": "INT64"
+			},
+			{
+				"name": "BeanVersion",
+				"type": "INT32"
+			},
+			{
+				"name": "UpdateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "CheckSetID",
+				"type": "INT64"
+			},
+			{
+				"name": "Comments",
+				"type": "UTF8"
+			},
+			{
+				"name": "ReportableAmount",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ServicePdEnd",
+				"type": "INT96"
+			},
+			{
+				"name": "ClaimID",
+				"type": "INT64"
+			},
+			{
+				"name": "LoadCommandID",
+				"type": "INT64"
+			},
+			{
+				"name": "PayToDenorm",
+				"type": "UTF8"
+			},
+			{
+				"name": "RecurringCheckID",
+				"type": "INT64"
+			},
+			{
+				"name": "UpdateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "PaymentMethod",
+				"type": "INT32"
+			},
+			{
+				"name": "EnteredTime",
+				"type": "INT96"
+			},
+			{
+				"name": "IsPrimary",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "BulkInvoiceItemInfoID",
+				"type": "INT64"
+			},
+			{
+				"name": "PayTo",
+				"type": "UTF8"
+			},
+			{
+				"name": "InvoiceNumber",
+				"type": "UTF8"
+			},
+			{
+				"name": "Status",
+				"type": "INT32"
+			},
+			{
+				"name": "BankAccountNumber",
+				"type": "UTF8"
+			},
+			{
+				"name": "BankRoutingNumber",
+				"type": "UTF8"
+			},
+			{
+				"name": "Reportability",
+				"type": "INT32"
+			},
+			{
+				"name": "ScheduledSendDate",
+				"type": "INT96"
+			},
+			{
+				"name": "CheckType",
+				"type": "INT32"
+			},
+			{
+				"name": "MailToAddress",
+				"type": "UTF8"
+			},
+			{
+				"name": "CreateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "Memo",
+				"type": "UTF8"
+			},
+			{
+				"name": "CheckBatching",
+				"type": "INT32"
+			},
+			{
+				"name": "AccountName",
+				"type": "UTF8"
+			},
+			{
+				"name": "BankAccount",
+				"type": "INT32"
+			},
+			{
+				"name": "DeliveryMethod",
+				"type": "INT32"
+			},
+			{
+				"name": "MailTo",
+				"type": "UTF8"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,205 @@
+{
+	"name": "dimCoverage",
+	"properties": {
+		"folder": {
+			"name": "Insurance Analytics Azure/ccDimDataflows"
+		},
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "DS_CC_COVERAGETYPE",
+						"type": "DatasetReference"
+					},
+					"name": "cctlCoverageType"
+				},
+				{
+					"dataset": {
+						"referenceName": "DS_DIM_COVERAGE",
+						"type": "DatasetReference"
+					},
+					"name": "tgtCcDimCoverage"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "DS_DIM_COVERAGE",
+						"type": "DatasetReference"
+					},
+					"name": "ccDimCoverage"
+				},
+				{
+					"dataset": {
+						"referenceName": "DS_DIM_COVERAGE",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "srcColumnTransformations"
+				},
+				{
+					"name": "tgtHashKey"
+				},
+				{
+					"name": "srcHashKey"
+				},
+				{
+					"name": "lookup1"
+				},
+				{
+					"name": "split1"
+				},
+				{
+					"name": "alterRow1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          L_en_US as string,",
+				"          PRIORITY as integer,",
+				"          TYPECODE as string,",
+				"          S_en_US as integer,",
+				"          RETIRED as boolean,",
+				"          NAME as string,",
+				"          ID as integer,",
+				"          DESCRIPTION as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     format: 'parquet') ~> cctlCoverageType",
+				"source(output(",
+				"          COVERAGE_ID as integer,",
+				"          COVERAGE_KEY as string,",
+				"          ETL_ROW_EFF_DATETIMESTAMP as timestamp,",
+				"          ETL_ROW_EXP_DATETIMESTAMP as timestamp,",
+				"          ROW_PROC_DATETIMESTAMP as timestamp,",
+				"          SOURCE as string,",
+				"          COVERAGE_PART_CODE as string,",
+				"          COVERAGE_PART_CODE_DESCRIPTION as string,",
+				"          COVERAGE_CODE as string,",
+				"          COVERAGE_CODE_DESCRIPTION as string,",
+				"          ETL_CURR_ROW_FLAG as string,",
+				"          ETL_LATE_ARRIVING_FLAG as string,",
+				"          ETL_ACTIVE_FLAG as string,",
+				"          ETL_ADD_DATETIMESTAMP as timestamp,",
+				"          ETL_LAST_UPDATE_DATETIMESTAMP as timestamp,",
+				"          COVERAGE as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     format: 'table') ~> tgtCcDimCoverage",
+				"cctlCoverageType derive(SRC_COVERAGE_KEY = concat('CC-', TYPECODE),",
+				"          SRC_ETL_ROW_EFF_DATETIMESTAMP = currentTimestamp(),",
+				"          SRC_ROW_PROC_DATETIMESTAMP = currentTimestamp(),",
+				"          SRC_SOURCE = 'CC',",
+				"          SRC_ETL_CURR_ROW_FLAG = 'Y',",
+				"          SRC_ETL_ACTIVE_FLAG = 'Y',",
+				"          SRC_ETL_ADD_DATETIMESTAMP = currentTimestamp(),",
+				"          SRC_ETL_LAST_UPDATE_DATETIMESTAMP = currentTimestamp(),",
+				"          SRC_COVERAGE_CODE = TYPECODE,",
+				"          SRC_COVERAGE_CODE_DESCRIPTION = DESCRIPTION,",
+				"          SRC_COVERAGE = NAME) ~> srcColumnTransformations",
+				"tgtCcDimCoverage derive(tgtHashKey = sha1(COVERAGE_KEY,SOURCE,COVERAGE_CODE,COVERAGE_CODE_DESCRIPTION,COVERAGE)) ~> tgtHashKey",
+				"srcColumnTransformations derive(srcHashKey = sha1(SRC_COVERAGE_KEY,SRC_SOURCE,SRC_COVERAGE_CODE,SRC_COVERAGE_CODE_DESCRIPTION,SRC_COVERAGE)) ~> srcHashKey",
+				"srcHashKey, tgtHashKey lookup(SRC_COVERAGE_KEY == COVERAGE_KEY,",
+				"     multiple: false,",
+				"     pickup: 'any',",
+				"     broadcast: 'auto')~> lookup1",
+				"lookup1 split(isNull(COVERAGE_KEY),",
+				"     !isNull(COVERAGE_KEY)&&notEquals(srcHashKey,tgtHashKey),",
+				"     disjoint: false) ~> split1@(Insert, Update, Noupdate)",
+				"split1@Update alterRow(updateIf(true())) ~> alterRow1",
+				"split1@Insert sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          COVERAGE_ID as integer,",
+				"          COVERAGE_KEY as string,",
+				"          ETL_ROW_EFF_DATETIMESTAMP as timestamp,",
+				"          ETL_ROW_EXP_DATETIMESTAMP as timestamp,",
+				"          ROW_PROC_DATETIMESTAMP as timestamp,",
+				"          SOURCE as string,",
+				"          COVERAGE_PART_CODE as string,",
+				"          COVERAGE_PART_CODE_DESCRIPTION as string,",
+				"          COVERAGE_CODE as string,",
+				"          COVERAGE_CODE_DESCRIPTION as string,",
+				"          ETL_CURR_ROW_FLAG as string,",
+				"          ETL_LATE_ARRIVING_FLAG as string,",
+				"          ETL_ACTIVE_FLAG as string,",
+				"          ETL_ADD_DATETIMESTAMP as timestamp,",
+				"          ETL_LAST_UPDATE_DATETIMESTAMP as timestamp,",
+				"          COVERAGE as string",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError',",
+				"     mapColumn(",
+				"          COVERAGE_KEY = SRC_COVERAGE_KEY,",
+				"          ETL_ROW_EFF_DATETIMESTAMP = SRC_ETL_ROW_EFF_DATETIMESTAMP,",
+				"          ROW_PROC_DATETIMESTAMP = SRC_ROW_PROC_DATETIMESTAMP,",
+				"          SOURCE = SRC_SOURCE,",
+				"          COVERAGE_CODE = SRC_COVERAGE_CODE,",
+				"          COVERAGE_CODE_DESCRIPTION = SRC_COVERAGE_CODE_DESCRIPTION,",
+				"          ETL_CURR_ROW_FLAG = SRC_ETL_CURR_ROW_FLAG,",
+				"          ETL_ACTIVE_FLAG = SRC_ETL_ACTIVE_FLAG,",
+				"          ETL_ADD_DATETIMESTAMP = SRC_ETL_ADD_DATETIMESTAMP,",
+				"          ETL_LAST_UPDATE_DATETIMESTAMP = SRC_ETL_LAST_UPDATE_DATETIMESTAMP,",
+				"          COVERAGE = SRC_COVERAGE",
+				"     )) ~> ccDimCoverage",
+				"alterRow1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          COVERAGE_ID as integer,",
+				"          COVERAGE_KEY as string,",
+				"          ETL_ROW_EFF_DATETIMESTAMP as timestamp,",
+				"          ETL_ROW_EXP_DATETIMESTAMP as timestamp,",
+				"          ROW_PROC_DATETIMESTAMP as timestamp,",
+				"          SOURCE as string,",
+				"          COVERAGE_PART_CODE as string,",
+				"          COVERAGE_PART_CODE_DESCRIPTION as string,",
+				"          COVERAGE_CODE as string,",
+				"          COVERAGE_CODE_DESCRIPTION as string,",
+				"          ETL_CURR_ROW_FLAG as string,",
+				"          ETL_LATE_ARRIVING_FLAG as string,",
+				"          ETL_ACTIVE_FLAG as string,",
+				"          ETL_ADD_DATETIMESTAMP as timestamp,",
+				"          ETL_LAST_UPDATE_DATETIMESTAMP as timestamp,",
+				"          COVERAGE as string",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:false,",
+				"     updateable:true,",
+				"     upsertable:false,",
+				"     keys:['COVERAGE_KEY'],",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError',",
+				"     mapColumn(",
+				"          COVERAGE_KEY = SRC_COVERAGE_KEY,",
+				"          ETL_ROW_EFF_DATETIMESTAMP = SRC_ETL_ROW_EFF_DATETIMESTAMP,",
+				"          ROW_PROC_DATETIMESTAMP = SRC_ROW_PROC_DATETIMESTAMP,",
+				"          SOURCE = SRC_SOURCE,",
+				"          COVERAGE_CODE = SRC_COVERAGE_CODE,",
+				"          COVERAGE_CODE_DESCRIPTION = SRC_COVERAGE_CODE_DESCRIPTION,",
+				"          ETL_CURR_ROW_FLAG = SRC_ETL_CURR_ROW_FLAG,",
+				"          ETL_ACTIVE_FLAG = SRC_ETL_ACTIVE_FLAG,",
+				"          ETL_ADD_DATETIMESTAMP = SRC_ETL_ADD_DATETIMESTAMP,",
+				"          ETL_LAST_UPDATE_DATETIMESTAMP = SRC_ETL_LAST_UPDATE_DATETIMESTAMP,",
+				"          COVERAGE = SRC_COVERAGE",
+				"     )) ~> sink1"
+			]
+		}
+	}
+}

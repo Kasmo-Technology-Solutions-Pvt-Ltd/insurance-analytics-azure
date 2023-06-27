@@ -1,0 +1,66 @@
+{
+	"name": "DS_PC_VIEWS_FILES",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"File_Name": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/POLICY-CENTER"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().File_Name",
+					"type": "Expression"
+				},
+				"folderPath": "POLICY_CENTER_VIEWS_TABLES",
+				"fileSystem": "policy-center"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "L_en_US",
+				"type": "UTF8"
+			},
+			{
+				"name": "PRIORITY",
+				"type": "INT32"
+			},
+			{
+				"name": "TYPECODE",
+				"type": "UTF8"
+			},
+			{
+				"name": "S_en_US",
+				"type": "INT32"
+			},
+			{
+				"name": "RETIRED",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "NAME",
+				"type": "UTF8"
+			},
+			{
+				"name": "ID",
+				"type": "INT32"
+			},
+			{
+				"name": "DESCRIPTION",
+				"type": "UTF8"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

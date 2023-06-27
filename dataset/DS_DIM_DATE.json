@@ -1,0 +1,120 @@
+{
+	"name": "DS_DIM_DATE",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/POLICY-CENTER"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "DATE_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Date",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "FullDate",
+				"type": "varchar"
+			},
+			{
+				"name": "DAY_OF_MONTH",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "DAYName",
+				"type": "char"
+			},
+			{
+				"name": "DAY_OF_WEEK",
+				"type": "varchar"
+			},
+			{
+				"name": "YEAR",
+				"type": "varchar"
+			},
+			{
+				"name": "MONTH",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "MONTH_NAME",
+				"type": "char"
+			},
+			{
+				"name": "WEEK_OF_YEAR",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "DAY_OF_YEAR",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "Quarter",
+				"type": "char"
+			},
+			{
+				"name": "MonthYear",
+				"type": "varchar"
+			},
+			{
+				"name": "MMYYYY",
+				"type": "char"
+			},
+			{
+				"name": "YYYYMM",
+				"type": "char"
+			},
+			{
+				"name": "LASTDAYOFMONTH",
+				"type": "char"
+			},
+			{
+				"name": "LASTDAYOFYEAR",
+				"type": "char"
+			},
+			{
+				"name": "LASTDAYOFQUARTER",
+				"type": "char"
+			},
+			{
+				"name": "YearName",
+				"type": "varchar"
+			},
+			{
+				"name": "FirstDayOfMonth",
+				"type": "varchar"
+			},
+			{
+				"name": "FirstDayOfQuater",
+				"type": "varchar"
+			},
+			{
+				"name": "FirstDayOfYear",
+				"type": "varchar"
+			},
+			{
+				"name": "MonthOfQuarter",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "PCDM",
+			"table": "DW_DIM_DATE"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

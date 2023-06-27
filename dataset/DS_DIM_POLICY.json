@@ -1,0 +1,310 @@
+{
+	"name": "DS_DIM_POLICY",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/POLICY-CENTER"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "POLICY_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SOURCE",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST_STATUS_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LAST_STATUS_PROC_DTS",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "LAST_STATUS_EFF_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "POLICY_KEY",
+				"type": "varchar"
+			},
+			{
+				"name": "POLICY_NO",
+				"type": "varchar"
+			},
+			{
+				"name": "POL_EFF_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "POL_EXP_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ORIG_EFF_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "POL_YEAR",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "POL_FORM_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "PRIM_STATE_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "POL_TERM",
+				"type": "varchar"
+			},
+			{
+				"name": "SIC_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "NEW_BUS_FL",
+				"type": "varchar"
+			},
+			{
+				"name": "ENTITY_TYPE_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "BILL_PLAN_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "PAY_PLAN_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "AUDIT_PLAN_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "ELECT_FUNDS_TFR_FL",
+				"type": "varchar"
+			},
+			{
+				"name": "CLAIMS_MADE_FL",
+				"type": "varchar"
+			},
+			{
+				"name": "RETRO_FL",
+				"type": "varchar"
+			},
+			{
+				"name": "UNDERWRITER_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "END_EFF_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "END_EXP_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "MOSTRECENTMODEL",
+				"type": "bit"
+			},
+			{
+				"name": "JOB_CREATETIME",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "JOB_REJECTREASONTEXT",
+				"type": "varchar"
+			},
+			{
+				"name": "JOB_JOBNUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "JOB_SUBMISSIONDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "JOB_UPDATEUSERID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ISSUEDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CANCELLATIONDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "HASAPPROVALORREJECTION",
+				"type": "bit"
+			},
+			{
+				"name": "UWISSUE_SHORTDESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "POLICY_STATUS_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "POL_PERIOD_STATUS",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "BRANCHNAME",
+				"type": "varchar"
+			},
+			{
+				"name": "UPDATE_USER_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "UPDATE_USER",
+				"type": "varchar"
+			},
+			{
+				"name": "JOB_RENEWALCODE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "POLICYTYPE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "POLICYSUFFIX",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCOUNTNUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "UNDERWRITERGROUPTYPE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "UNDERWRITINGGROUPNAME",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RETENTION_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "ETL_ADD_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_LAST_UPDATE_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_ACTIVE_FL",
+				"type": "varchar"
+			},
+			{
+				"name": "JOB_RENEWALCODE_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "POL_PERIOD_STATUS_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "POLICYTYPE_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "UNDERWRITINGGROUPNAME_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "UNDERWRITERGROUPTYPE_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "POL_STATUS_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCOUNTNAME",
+				"type": "varchar"
+			},
+			{
+				"name": "POLICY_STATUS_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "POLICY_REASON_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "POLICY_SNAPSHOT_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "PRIMIUM_STATE_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "UNDERWRITER_DESC",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "PCDM",
+			"table": "DW_DIM_POLICY"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

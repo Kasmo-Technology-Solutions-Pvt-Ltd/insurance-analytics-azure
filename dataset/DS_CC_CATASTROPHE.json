@@ -1,0 +1,138 @@
+{
+	"name": "DS_CC_CATASTROPHE",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/CLAIM-CENTER"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "dbo_CC_CATASTROPHE_2023-04-17 17:38:03:549.parquet",
+				"folderPath": "2023/2023-04/2023-04-17",
+				"fileSystem": "claim-center"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "TopLeftLatitude",
+				"type": "DECIMAL",
+				"precision": 7,
+				"scale": 5
+			},
+			{
+				"name": "Retired",
+				"type": "INT64"
+			},
+			{
+				"name": "Type",
+				"type": "INT32"
+			},
+			{
+				"name": "PublicID",
+				"type": "UTF8"
+			},
+			{
+				"name": "BottomRightLatitude",
+				"type": "DECIMAL",
+				"precision": 7,
+				"scale": 5
+			},
+			{
+				"name": "PCSCatastropheNumber",
+				"type": "UTF8"
+			},
+			{
+				"name": "CreateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "BottomRightLongitude",
+				"type": "DECIMAL",
+				"precision": 8,
+				"scale": 5
+			},
+			{
+				"name": "CatastropheNumber",
+				"type": "UTF8"
+			},
+			{
+				"name": "ID",
+				"type": "INT64"
+			},
+			{
+				"name": "BeanVersion",
+				"type": "INT32"
+			},
+			{
+				"name": "ScheduleBatch",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "UpdateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "PolicyEffectiveDate",
+				"type": "INT96"
+			},
+			{
+				"name": "Comments",
+				"type": "UTF8"
+			},
+			{
+				"name": "Description",
+				"type": "UTF8"
+			},
+			{
+				"name": "LoadCommandID",
+				"type": "INT64"
+			},
+			{
+				"name": "UpdateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "CatastropheValidTo",
+				"type": "INT96"
+			},
+			{
+				"name": "TopLeftLongitude",
+				"type": "DECIMAL",
+				"precision": 8,
+				"scale": 5
+			},
+			{
+				"name": "Name",
+				"type": "UTF8"
+			},
+			{
+				"name": "Active",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "CreateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "PolicyRetrievalSetTime",
+				"type": "INT96"
+			},
+			{
+				"name": "CatastropheValidFrom",
+				"type": "INT96"
+			},
+			{
+				"name": "PolicyRetrievalCompletionTime",
+				"type": "INT96"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

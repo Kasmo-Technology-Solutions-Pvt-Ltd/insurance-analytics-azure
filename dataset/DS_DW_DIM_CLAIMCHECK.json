@@ -1,0 +1,105 @@
+{
+	"name": "DS_DW_DIM_CLAIMCHECK",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/CLAIM-CENTER/CC_Tables/CC_Tables"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "CHECK_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CHECK_BID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CHECK_KEY",
+				"type": "varchar"
+			},
+			{
+				"name": "ETL_ROW_EFF_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_ROW_EXP_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "SOURCE",
+				"type": "varchar"
+			},
+			{
+				"name": "CHECK_ISSUE_TIME",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CHECK_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "PAYEE_MAIL_ADDRESS",
+				"type": "varchar"
+			},
+			{
+				"name": "PAYEE_1_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "PAYEE_2_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "ETL_ACTIVE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "ETL_ADD_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_LAST_UPDATE_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "PAYEE_TAXID",
+				"type": "varchar"
+			},
+			{
+				"name": "PAYTONAME",
+				"type": "varchar"
+			},
+			{
+				"name": "CHECKTYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "CHECK_COST_TYPECODE",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "CCDM",
+			"table": "DW_DIM_CLAIMCHECK"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

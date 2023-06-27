@@ -1,0 +1,137 @@
+{
+	"name": "DS_FACT_PREMIUM_CALYEAR",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/POLICY-CENTER"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "DW_FACT_PREMIUM_CAL_YEAR.csv",
+				"folderPath": "Policy_Center_Center_History",
+				"fileSystem": "policy-center"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "PREMIUM_CAL_YEAR_ID",
+				"type": "String"
+			},
+			{
+				"name": "ORG_ID",
+				"type": "String"
+			},
+			{
+				"name": "PRODUCT_ID",
+				"type": "String"
+			},
+			{
+				"name": "COVERAGE_ID",
+				"type": "String"
+			},
+			{
+				"name": "AGENT_ID",
+				"type": "String"
+			},
+			{
+				"name": "AGENCY_ID",
+				"type": "String"
+			},
+			{
+				"name": "RECORD_TYPE_ID",
+				"type": "String"
+			},
+			{
+				"name": "LOCATION_ID",
+				"type": "String"
+			},
+			{
+				"name": "ACCTG_PRD_ID",
+				"type": "String"
+			},
+			{
+				"name": "CURRENCY_CODE",
+				"type": "String"
+			},
+			{
+				"name": "INFORCE_PREMIUM_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "UNEARNED_PREMIUM_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "MT_WRITTEN_PREMIUM_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "MT_COMMISSION_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "MT_EARNED_PREMIUM_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "QT_WRITTEN_PREMIUM_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "QT_COMMISSION_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "QT_EARNED_PREMIUM_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "YT_WRITTEN_PREMIUM_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "YT_COMMISSION_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "YT_EARNED_PREMIUM_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "ETL_ACTIVE_FLAG",
+				"type": "String"
+			},
+			{
+				"name": "ETL_ADD_DATETIMESTAMP",
+				"type": "String"
+			},
+			{
+				"name": "ETL_LAST_UPDATE_DATETIMESTAMP",
+				"type": "String"
+			},
+			{
+				"name": "NEW_BUSINESS_FLAG",
+				"type": "String"
+			},
+			{
+				"name": "CURRENT_YEAR_FLAG",
+				"type": "String"
+			},
+			{
+				"name": "PREVIOUS_YEAR_FLAG",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

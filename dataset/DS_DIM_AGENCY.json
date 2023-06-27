@@ -1,0 +1,143 @@
+{
+	"name": "DS_DIM_AGENCY",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/POLICY-CENTER"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "AGENCY_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AGENCY_KEY",
+				"type": "varchar"
+			},
+			{
+				"name": "SOURCE",
+				"type": "varchar"
+			},
+			{
+				"name": "AGENCY_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "AGENCY_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "AGENCY_ADDRESS_1",
+				"type": "varchar"
+			},
+			{
+				"name": "AGENCY_ADDRESS_2",
+				"type": "varchar"
+			},
+			{
+				"name": "AGENCY_ADDRESS_3",
+				"type": "varchar"
+			},
+			{
+				"name": "AGENCY_CITY",
+				"type": "varchar"
+			},
+			{
+				"name": "AGENCY_STATE_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "AGENCY_STATE_CODE_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "AGENCY_ZIP_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "AGENCY_PHONE_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "AGENCY_APPT_DATE",
+				"type": "date"
+			},
+			{
+				"name": "AGENCY_TERM_DATE",
+				"type": "date"
+			},
+			{
+				"name": "AGENCY_STATUS_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "MANAGER_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "REP_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "REGION_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "AGENCY_LIC_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "AGENCY_TAX_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "ETL_ROW_EFF_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_ROW_EXP_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_ACTIVE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "ETL_ADD_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_LAST_UPDATE_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ORGANIZATION_TYPE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ORGANIZATION_TYPE_DESCRIPTION",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "PCDM",
+			"table": "DW_DIM_AGENCY"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

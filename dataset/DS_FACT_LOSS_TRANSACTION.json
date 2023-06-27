@@ -1,0 +1,229 @@
+{
+	"name": "DS_FACT_LOSS_TRANSACTION",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/CLAIM-CENTER/CC_Tables"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "DW_FACT_LOSS_TRANSACTION.csv",
+				"folderPath": "Claim_Center_History",
+				"fileSystem": "claim-center"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "LOSS_TRANSACTION_ID",
+				"type": "String"
+			},
+			{
+				"name": "PRODUCT_ID",
+				"type": "String"
+			},
+			{
+				"name": "POLICY_ID",
+				"type": "String"
+			},
+			{
+				"name": "COVG_ID",
+				"type": "String"
+			},
+			{
+				"name": "CLMNT_ID",
+				"type": "String"
+			},
+			{
+				"name": "CLAIM_FEATURE_ID",
+				"type": "String"
+			},
+			{
+				"name": "PRIM_NAMED_INSURED_ID",
+				"type": "String"
+			},
+			{
+				"name": "CHECK_ID",
+				"type": "String"
+			},
+			{
+				"name": "VEHICLE_INCIDENT_ID",
+				"type": "String"
+			},
+			{
+				"name": "INJ_INCIDENT_ID",
+				"type": "String"
+			},
+			{
+				"name": "MONTH_ID",
+				"type": "String"
+			},
+			{
+				"name": "DATE_ID",
+				"type": "String"
+			},
+			{
+				"name": "CLAIM_ID",
+				"type": "String"
+			},
+			{
+				"name": "ALT_LOSS_TRANSACTION_ID",
+				"type": "String"
+			},
+			{
+				"name": "ORG_ID",
+				"type": "String"
+			},
+			{
+				"name": "LOC_ID",
+				"type": "String"
+			},
+			{
+				"name": "AGENT_ID",
+				"type": "String"
+			},
+			{
+				"name": "AGENCY_ID",
+				"type": "String"
+			},
+			{
+				"name": "VENDOR_ID",
+				"type": "String"
+			},
+			{
+				"name": "REC_TYPE_ID",
+				"type": "String"
+			},
+			{
+				"name": "TRANSACTION_PROC_DT_ID",
+				"type": "String"
+			},
+			{
+				"name": "ACCTG_PRD_ID",
+				"type": "String"
+			},
+			{
+				"name": "CHECK_DT_ID",
+				"type": "String"
+			},
+			{
+				"name": "ACCT_ID",
+				"type": "String"
+			},
+			{
+				"name": "TRANSACTION_PROC_DATETIMESTAMP",
+				"type": "String"
+			},
+			{
+				"name": "RISK_TYPE_CODE",
+				"type": "String"
+			},
+			{
+				"name": "SOURCE",
+				"type": "String"
+			},
+			{
+				"name": "TRANSACTION_TYPE_CODE",
+				"type": "String"
+			},
+			{
+				"name": "TRANSACTION_CODE",
+				"type": "String"
+			},
+			{
+				"name": "TRANSACTION_SEQ",
+				"type": "String"
+			},
+			{
+				"name": "TRANSACTION_ALLOC_CODE",
+				"type": "String"
+			},
+			{
+				"name": "CHECK_NUMBER",
+				"type": "String"
+			},
+			{
+				"name": "TRANSACTION_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "RESERVE_CHANGE_AMOUNT",
+				"type": "String"
+			},
+			{
+				"name": "ETL_ACTIVE_FLAG",
+				"type": "String"
+			},
+			{
+				"name": "ETL_ADD_DATETIMESTAMP",
+				"type": "String"
+			},
+			{
+				"name": "ETL_LAST_UPDATE_DATETIMESTAMP",
+				"type": "String"
+			},
+			{
+				"name": "PMT_TYP_CODE",
+				"type": "String"
+			},
+			{
+				"name": "CHECK_KEY",
+				"type": "String"
+			},
+			{
+				"name": "RCVRY_PAYR_NM",
+				"type": "String"
+			},
+			{
+				"name": "RCVRY_CATG_TYP_CODE",
+				"type": "String"
+			},
+			{
+				"name": "TRANSACTION_DOESNT_ERODERESERVE",
+				"type": "String"
+			},
+			{
+				"name": "TRANSACTION_LINEITEM",
+				"type": "String"
+			},
+			{
+				"name": "TRANSACTION_STATUS",
+				"type": "String"
+			},
+			{
+				"name": "TRANSACTION_COST_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "TRN_STATUS_DESCRIPTION_EXT",
+				"type": "String"
+			},
+			{
+				"name": "PMT_TYP_CODE_DESCRIPTION_EXT",
+				"type": "String"
+			},
+			{
+				"name": "TRANSACTION_LINEITEM_DESCRIPTION",
+				"type": "String"
+			},
+			{
+				"name": "CURRENCY_CODE",
+				"type": "String"
+			},
+			{
+				"name": "TRANSACTION_COST_TYPE_DESCRIPTION",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
