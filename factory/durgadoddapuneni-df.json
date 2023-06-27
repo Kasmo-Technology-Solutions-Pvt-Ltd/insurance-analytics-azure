@@ -1,0 +1,9 @@
+{
+	"name": "durgadoddapuneni-df",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "2c7c9edf-0fc9-4359-9292-4f10040f7afc",
+		"tenantId": "2b729c5c-51ae-4229-9af9-50c4ad82be10"
+	}
+}
