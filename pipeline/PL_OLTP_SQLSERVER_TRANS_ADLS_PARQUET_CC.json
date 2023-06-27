@@ -1,0 +1,681 @@
+{
+	"name": "PL_OLTP_SQLSERVER_TRANS_ADLS_PARQUET_CC",
+	"properties": {
+		"activities": [
+			{
+				"name": "GETTABLE",
+				"type": "Lookup",
+				"dependsOn": [
+					{
+						"activity": "TIMESTAMP",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": {
+							"value": "select *\nfrom dbo.raw_control_table\nwhere disable_load_flag='FALSE'\nand database_name='@{pipeline().parameters.database_name}'\n;",
+							"type": "Expression"
+						},
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "DS_ASQL_TABLE",
+						"type": "DatasetReference"
+					},
+					"firstRowOnly": false
+				}
+			},
+			{
+				"name": "ForEach",
+				"description": "Full and Incremental load",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "GETTABLE",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('GETTABLE').output.value",
+						"type": "Expression"
+					},
+					"isSequential": true,
+					"activities": [
+						{
+							"name": "If_Is_incremental_Load_flag",
+							"description": "if is_incremental_load is true then incremental load and false then full load. ",
+							"type": "IfCondition",
+							"dependsOn": [
+								{
+									"activity": "Is_incremental_load",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"userProperties": [],
+							"typeProperties": {
+								"expression": {
+									"value": "@bool(variables('Variable_Is_Incremental_Load'))",
+									"type": "Expression"
+								},
+								"ifFalseActivities": [
+									{
+										"name": "Full Load",
+										"type": "Copy",
+										"dependsOn": [],
+										"policy": {
+											"timeout": "0.12:00:00",
+											"retry": 0,
+											"retryIntervalInSeconds": 30,
+											"secureOutput": false,
+											"secureInput": false
+										},
+										"userProperties": [],
+										"typeProperties": {
+											"source": {
+												"type": "SqlServerSource",
+												"sqlReaderQuery": {
+													"value": "Select * From @{item().Table_Name}",
+													"type": "Expression"
+												},
+												"queryTimeout": "02:00:00",
+												"partitionOption": "None"
+											},
+											"sink": {
+												"type": "ParquetSink",
+												"storeSettings": {
+													"type": "AzureBlobFSWriteSettings"
+												},
+												"formatSettings": {
+													"type": "ParquetWriteSettings"
+												}
+											},
+											"enableStaging": false,
+											"translator": {
+												"type": "TabularTranslator",
+												"typeConversion": true,
+												"typeConversionSettings": {
+													"allowDataTruncation": true,
+													"treatBooleanAsNumber": false
+												}
+											}
+										},
+										"inputs": [
+											{
+												"referenceName": "DS_SQLSERVER_TABLE",
+												"type": "DatasetReference",
+												"parameters": {
+													"db_name": {
+														"value": "@pipeline().parameters.db_name",
+														"type": "Expression"
+													},
+													"servername": {
+														"value": "@pipeline().parameters.servername",
+														"type": "Expression"
+													},
+													"username": {
+														"value": "@pipeline().parameters.username",
+														"type": "Expression"
+													},
+													"password": {
+														"value": "@pipeline().parameters.password",
+														"type": "Expression"
+													}
+												}
+											}
+										],
+										"outputs": [
+											{
+												"referenceName": "DS_ADLS_PARQUET_CC",
+												"type": "DatasetReference",
+												"parameters": {
+													"file_name": {
+														"value": "@concat(item().schema_name,'_',item().table_name,'_',variables('DateTImeStamp'),'.parquet')",
+														"type": "Expression"
+													},
+													"folder_name": {
+														"value": "@concat(formatDateTime(utcnow(),'yyyy'),'/',formatDateTime(utcnow(),'yyyy-MM'),'/',formatDateTime(utcnow(),'yyyy-MM-dd'),'/')",
+														"type": "Expression"
+													}
+												}
+											}
+										]
+									},
+									{
+										"name": "Ingestion History",
+										"type": "Script",
+										"dependsOn": [
+											{
+												"activity": "Full Load",
+												"dependencyConditions": [
+													"Succeeded"
+												]
+											}
+										],
+										"policy": {
+											"timeout": "0.12:00:00",
+											"retry": 0,
+											"retryIntervalInSeconds": 30,
+											"secureOutput": false,
+											"secureInput": false
+										},
+										"userProperties": [],
+										"linkedServiceName": {
+											"referenceName": "AzureSqlDatabase",
+											"type": "LinkedServiceReference"
+										},
+										"typeProperties": {
+											"scripts": [
+												{
+													"type": "Query",
+													"text": {
+														"value": "INSERT INTO DBO.INGESTION_HISTORY_TABLE \n(RUN_ID \n,RUN_START \n,RUN_END \n,DURATION \n,DATALAKE_CONTAINER \n,DATALAKE_FOLDER \n,SNOWFLAKE_WORSKPACE \n,PIPELINE_NAME \n,PIPELINE_DATE\n,TARGET_FILE_NAME \n,SOURCE_SERVER_NAME \n,SOURCE_DATABASE_NAME \n,SOURCE_SCHEMA_NAME \n,SOURCE_TABLE_NAME \n,TARGET_DATABASE_NAME \n,TARGET_SCHEMA_NAME \n,SNOWFLAKE_FLAG\n,TRIGGERED_BY \n,STATUS \n,ERROR \n,RUN \n,PARAMETER_STRING \n,SOURCE_NBR_OF_RECORDS \n,TARGET_NBR_OF_RECORDS \n,EDW_CREATED_DATE \n,EDW_CREATED_BY \n,EDW_MODIFIED_DATE \n,EDW_MODIFIED_BY)\nVALUES\n('@{pipeline().RunId}',\n'@{utcNow()}',\n'@{utcNow()}',\n'@{activity('Full Load').output.copyDuration}',\n'@{item().DATALAKE_CONTAINER}',\n'@{item().DATALAKE_FOLDER}',\n'@{item().SNOWFLAKE_WORSKPACE}',\n'@{pipeline().Pipeline}',\n'@{utcNow()}',\n'@{pipeline().Pipeline}'\n,'@{item().SERVER_NAME}'\n,'@{item().database_name}'\n,'@{item().schema_name}'\n,'@{item().Table_Name}'\n,'@{activity('Full Load').output.executionDetails[0].sink.type}'\n,'NULL'\n,'NULL'\n,'NULL'\n,'@{activity('Full Load').output.executionDetails[0].status}'\n,'NULL'\n,'@{item().ETL_VELOCITY}'\n,'NULL'\n,'@{activity('Full Load').output.rowsRead}'\n,'@{activity('Full Load').output.rowsCopied}'\n,'@{item().EDW_Created_Date}'\n,'@{item().EDW_Created_By}'\n,'@{item().EDW_Modified_Date}'\n,'@{item().EDW_Modified_By}'\n)\n",
+														"type": "Expression"
+													}
+												}
+											],
+											"scriptBlockExecutionTimeout": "02:00:00"
+										}
+									},
+									{
+										"name": "Update Is_Incremental_Load",
+										"type": "Script",
+										"dependsOn": [
+											{
+												"activity": "Full Load",
+												"dependencyConditions": [
+													"Succeeded"
+												]
+											}
+										],
+										"policy": {
+											"timeout": "0.12:00:00",
+											"retry": 0,
+											"retryIntervalInSeconds": 30,
+											"secureOutput": false,
+											"secureInput": false
+										},
+										"userProperties": [],
+										"linkedServiceName": {
+											"referenceName": "AzureSqlDatabase",
+											"type": "LinkedServiceReference"
+										},
+										"typeProperties": {
+											"scripts": [
+												{
+													"type": "Query",
+													"text": {
+														"value": "Update DBO.Raw_Control_Table \nset IS_INCREMENTAL_LOAD = 'TRUE'\nwhere Table_name ='@{item().table_name}';",
+														"type": "Expression"
+													}
+												}
+											],
+											"scriptBlockExecutionTimeout": "02:00:00"
+										}
+									}
+								],
+								"ifTrueActivities": [
+									{
+										"name": "Copy_Incremental",
+										"type": "Copy",
+										"dependsOn": [
+											{
+												"activity": "UpdateTime",
+												"dependencyConditions": [
+													"Succeeded"
+												]
+											}
+										],
+										"policy": {
+											"timeout": "0.12:00:00",
+											"retry": 0,
+											"retryIntervalInSeconds": 30,
+											"secureOutput": false,
+											"secureInput": false
+										},
+										"userProperties": [],
+										"typeProperties": {
+											"source": {
+												"type": "SqlServerSource",
+												"sqlReaderQuery": {
+													"value": "Select * From @{item().Table_Name}\nwhere UpdateTime > '@{item().CURRENT_VALUE}'",
+													"type": "Expression"
+												},
+												"queryTimeout": "02:00:00",
+												"partitionOption": "None"
+											},
+											"sink": {
+												"type": "ParquetSink",
+												"storeSettings": {
+													"type": "AzureBlobFSWriteSettings"
+												},
+												"formatSettings": {
+													"type": "ParquetWriteSettings"
+												}
+											},
+											"enableStaging": false,
+											"translator": {
+												"type": "TabularTranslator",
+												"typeConversion": true,
+												"typeConversionSettings": {
+													"allowDataTruncation": true,
+													"treatBooleanAsNumber": false
+												}
+											}
+										},
+										"inputs": [
+											{
+												"referenceName": "DS_SQLSERVER_TABLE",
+												"type": "DatasetReference",
+												"parameters": {
+													"db_name": {
+														"value": "@pipeline().parameters.db_name",
+														"type": "Expression"
+													},
+													"servername": {
+														"value": "@pipeline().parameters.servername",
+														"type": "Expression"
+													},
+													"username": {
+														"value": "@pipeline().parameters.username",
+														"type": "Expression"
+													},
+													"password": {
+														"value": "@pipeline().parameters.password",
+														"type": "Expression"
+													}
+												}
+											}
+										],
+										"outputs": [
+											{
+												"referenceName": "DS_ADLS_PARQUET_CC",
+												"type": "DatasetReference",
+												"parameters": {
+													"file_name": {
+														"value": "@concat(item().schema_name,'_',item().table_name,'_',variables('DateTImeStamp'),'.parquet')",
+														"type": "Expression"
+													},
+													"folder_name": {
+														"value": "@concat(formatDateTime(utcnow(),'yyyy'),'/',formatDateTime(utcnow(),'yyyy-MM'),'/',formatDateTime(utcnow(),'yyyy-MM-dd'),'/')",
+														"type": "Expression"
+													}
+												}
+											}
+										]
+									},
+									{
+										"name": "UpdateTime",
+										"type": "Lookup",
+										"dependsOn": [],
+										"policy": {
+											"timeout": "0.12:00:00",
+											"retry": 0,
+											"retryIntervalInSeconds": 30,
+											"secureOutput": false,
+											"secureInput": false
+										},
+										"userProperties": [],
+										"typeProperties": {
+											"source": {
+												"type": "SqlServerSource",
+												"sqlReaderQuery": {
+													"value": "SELECT MAX(UpdateTime) AS MaxUpdateTime \nFROM @{item().table_name}\n",
+													"type": "Expression"
+												},
+												"queryTimeout": "02:00:00",
+												"partitionOption": "None"
+											},
+											"dataset": {
+												"referenceName": "DS_SQLSERVER_TABLE",
+												"type": "DatasetReference",
+												"parameters": {
+													"db_name": {
+														"value": "@pipeline().parameters.db_name",
+														"type": "Expression"
+													},
+													"servername": {
+														"value": "@pipeline().parameters.servername",
+														"type": "Expression"
+													},
+													"username": {
+														"value": "@pipeline().parameters.username",
+														"type": "Expression"
+													},
+													"password": {
+														"value": "@pipeline().parameters.password",
+														"type": "Expression"
+													}
+												}
+											},
+											"firstRowOnly": true
+										}
+									},
+									{
+										"name": "script_Update_current_value",
+										"description": "Updating current value for next run. ",
+										"type": "Script",
+										"dependsOn": [
+											{
+												"activity": "Copy_Incremental",
+												"dependencyConditions": [
+													"Succeeded"
+												]
+											}
+										],
+										"policy": {
+											"timeout": "0.12:00:00",
+											"retry": 0,
+											"retryIntervalInSeconds": 30,
+											"secureOutput": false,
+											"secureInput": false
+										},
+										"userProperties": [],
+										"linkedServiceName": {
+											"referenceName": "AzureSqlDatabase",
+											"type": "LinkedServiceReference"
+										},
+										"typeProperties": {
+											"scripts": [
+												{
+													"type": "NonQuery",
+													"text": {
+														"value": "Update dbo.Raw_Control_Table \nset CURRENT_VALUE = '@{activity('UpdateTime').output.firstRow.MaxUpdateTime}' \nwhere Table_name ='@{item().table_name}'\n\n",
+														"type": "Expression"
+													}
+												}
+											],
+											"scriptBlockExecutionTimeout": "02:00:00"
+										}
+									},
+									{
+										"name": "Script_Ingestion_table",
+										"description": "Updating current value for next run. ",
+										"type": "Script",
+										"dependsOn": [
+											{
+												"activity": "Copy_Incremental",
+												"dependencyConditions": [
+													"Failed"
+												]
+											}
+										],
+										"policy": {
+											"timeout": "0.12:00:00",
+											"retry": 0,
+											"retryIntervalInSeconds": 30,
+											"secureOutput": false,
+											"secureInput": false
+										},
+										"userProperties": [],
+										"linkedServiceName": {
+											"referenceName": "AzureSqlDatabase",
+											"type": "LinkedServiceReference"
+										},
+										"typeProperties": {
+											"scripts": [
+												{
+													"type": "NonQuery",
+													"text": {
+														"value": "INSERT INTO dbo.INGESTION_HISTORY_TABLE \n(RUN_ID \n,RUN_START \n,RUN_END \n,DURATION \n,DATALAKE_CONTAINER \n,DATALAKE_FOLDER \n,SNOWFLAKE_WORSKPACE \n,PIPELINE_NAME \n,PIPELINE_DATE\n,TARGET_FILE_NAME \n,SOURCE_SERVER_NAME \n,SOURCE_DATABASE_NAME \n,SOURCE_SCHEMA_NAME \n,SOURCE_TABLE_NAME \n,TARGET_DATABASE_NAME \n,TARGET_SCHEMA_NAME \n,SNOWFLAKE_FLAG\n,TRIGGERED_BY \n,STATUS \n,ERROR \n,RUN \n,PARAMETER_STRING \n,SOURCE_NBR_OF_RECORDS \n,TARGET_NBR_OF_RECORDS \n,EDW_CREATED_DATE \n,EDW_CREATED_BY \n,EDW_MODIFIED_DATE \n,EDW_MODIFIED_BY)\nVALUES\n('@{pipeline().RunId}'\n,'@{activity('Copy_Incremental').output.executionDetails[0].start}'\n,'@{utcNow()}'\n,'@{activity('Copy_Incremental').output.copyDuration}'\n,'@{item().DATALAKE_CONTAINER}'\n,'@{item().DATALAKE_FOLDER}'\n,'@{item().SNOWFLAKE_WORSKPACE}'\n,'@{pipeline().Pipeline}'\n,'@{utcNow()}'\n,'@{concat('inc','_',item().schema_name,'_',item().table_name,'_',variables('DateTImeStamp'),'.parquet')}'\n,'@{item().SERVER_NAME}'\n,'@{item().database_name}'\n,'@{item().schema_name}'\n,'@{item().Table_Name}'\n,'Null'\n,'Null'\n,'@{item().DISABLE_LOAD_FLAG}'\n,'@{pipeline().TriggerName}'\n,'@{activity('Copy_Incremental').output.executionDetails[0].STATUS}'\n,'@{activity('Copy_Incremental').Error.errorCode}'\n,'@{item().ETL_VELOCITY}'\n,'Null'\n,'@{activity('Copy_Incremental').output.rowsRead}'\n,'Null'\n,'@{item().EDW_Created_Date}'\n,'@{item().EDW_Created_By}'\n,'@{item().EDW_Modified_Date}'\n,'@{item().EDW_Modified_By}'\n)",
+														"type": "Expression"
+													}
+												}
+											],
+											"scriptBlockExecutionTimeout": "02:00:00"
+										}
+									}
+								]
+							}
+						},
+						{
+							"name": "Is_incremental_load",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "Variable_Is_Incremental_Load",
+								"value": {
+									"value": "@item().IS_INCREMENTAL_LOAD",
+									"type": "Expression"
+								}
+							}
+						}
+					]
+				}
+			},
+			{
+				"name": "TIMESTAMP",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "DateTImeStamp",
+					"value": {
+						"value": "@formatDateTime(utcNow(), 'yyyy-MM-dd HH:mm:ss:fff')",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "Lookup_Get_All_Data_Error_Messages",
+				"description": "It will get error messages from Lookup activity(Get_All_Data)",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "GETTABLE",
+						"dependencyConditions": [
+							"Failed"
+						]
+					}
+				],
+				"policy": {
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "Get_Error_Message",
+					"value": {
+						"value": "@concat('Lookup Get_All_Data job failed. Error Code:',activity('GETTABLE').error)",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "Failure_mail_copy1",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "Lookup_Get_All_Data_Error_Messages",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": {
+						"value": "https://prod-26.eastus.logic.azure.com:443/workflows/67369f7e987f48a5935822d20ca9acc1/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=I4YnpRguiBUK0jZbin3CO93KlTG_u0NTNm-xlw7IrFY",
+						"type": "Expression"
+					},
+					"method": "POST",
+					"body": {
+						"value": "{\n    \"dataFactoryName\":\"@{pipeline().DataFactory}\",\n    \"message\":\"@{variables('Get_Error_Message')}\",\n    \"pipelineName\":\"@{pipeline().Pipeline}\",\n    \"receiver\":\"saiteja@kasmo.co\"\n  \n    }",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "Failure_mail",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "ForEach",
+						"dependencyConditions": [
+							"Failed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": {
+						"value": "https://prod-26.eastus.logic.azure.com:443/workflows/67369f7e987f48a5935822d20ca9acc1/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=I4YnpRguiBUK0jZbin3CO93KlTG_u0NTNm-xlw7IrFY",
+						"type": "Expression"
+					},
+					"method": "POST",
+					"body": {
+						"value": "{\n    \"dataFactoryName\":\"@{pipeline().DataFactory}\",\n    \"message\":\"DATA COPY PIPELINE FAILED\",\n    \"pipelineName\":\"@{pipeline().Pipeline}\",\n    \"receiver\":\"saiteja@kasmo.co\"\n  \n    }",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "Success_mail",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "ForEach",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": {
+						"value": "https://prod-26.eastus.logic.azure.com:443/workflows/67369f7e987f48a5935822d20ca9acc1/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=I4YnpRguiBUK0jZbin3CO93KlTG_u0NTNm-xlw7IrFY",
+						"type": "Expression"
+					},
+					"method": "POST",
+					"body": {
+						"value": "{\n    \"dataFactoryName\":\"@{pipeline().DataFactory}\",\n    \"message\":\"DATA COPY PIPELINE FINISHED SUCCESSFULLY\",\n    \"pipelineName\":\"@{pipeline().Pipeline}\",\n    \"receiver\":\"saiteja@kasmo.co\"\n  \n    }",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"table_name": {
+				"type": "string",
+				"defaultValue": "CCTL_TRANSPORTTYPE"
+			},
+			"sfaccname": {
+				"type": "string",
+				"defaultValue": "sruzgaf-vo95235"
+			},
+			"sfusername": {
+				"type": "string",
+				"defaultValue": "cc_user"
+			},
+			"servername": {
+				"type": "string",
+				"defaultValue": "tcp:99.233.131.158,49172"
+			},
+			"db_name": {
+				"type": "string",
+				"defaultValue": "gw_cc1"
+			},
+			"username": {
+				"type": "string",
+				"defaultValue": "db_admin"
+			},
+			"password": {
+				"type": "string",
+				"defaultValue": "Kasmo@123"
+			},
+			"database_name": {
+				"type": "string",
+				"defaultValue": "GW_CC1"
+			},
+			"AZURE_DB_NAME": {
+				"type": "string",
+				"defaultValue": "InsuranceAnalytics_db"
+			},
+			"AZURE_USER_NAME": {
+				"type": "string",
+				"defaultValue": "dbadmin"
+			},
+			"AZURE_PASSWORD": {
+				"type": "string",
+				"defaultValue": "Kasmo@123"
+			}
+		},
+		"variables": {
+			"DateTImeStamp": {
+				"type": "String"
+			},
+			"Variable_Is_Incremental_Load": {
+				"type": "Boolean"
+			},
+			"MaxUpdateTime": {
+				"type": "String"
+			},
+			"Error": {
+				"type": "String"
+			},
+			"Get_Error_Message": {
+				"type": "String"
+			}
+		},
+		"folder": {
+			"name": "Insurance Analytics"
+		},
+		"annotations": [],
+		"lastPublishTime": "2023-05-30T09:04:45Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

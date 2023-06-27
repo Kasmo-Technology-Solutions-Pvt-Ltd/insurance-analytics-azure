@@ -1,0 +1,122 @@
+{
+	"name": "DS_CC_NOTE",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/CLAIM-CENTER"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "dbo_CC_NOTE_2023-04-17 17:38:03:549.parquet",
+				"folderPath": "2023/2023-04/2023-04-17",
+				"fileSystem": "claim-center"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "Body",
+				"type": "UTF8"
+			},
+			{
+				"name": "Retired",
+				"type": "INT64"
+			},
+			{
+				"name": "Subject",
+				"type": "UTF8"
+			},
+			{
+				"name": "ClaimID",
+				"type": "INT64"
+			},
+			{
+				"name": "LoadCommandID",
+				"type": "INT64"
+			},
+			{
+				"name": "Confidential",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "AuthorID",
+				"type": "INT64"
+			},
+			{
+				"name": "SecurityType",
+				"type": "INT32"
+			},
+			{
+				"name": "MatterID",
+				"type": "INT64"
+			},
+			{
+				"name": "UpdateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "PublicID",
+				"type": "UTF8"
+			},
+			{
+				"name": "ClaimContactID",
+				"type": "INT64"
+			},
+			{
+				"name": "ArchivePartition",
+				"type": "INT64"
+			},
+			{
+				"name": "ServiceRequestID",
+				"type": "INT64"
+			},
+			{
+				"name": "CreateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "AuthoringDate",
+				"type": "INT96"
+			},
+			{
+				"name": "ActivityID",
+				"type": "INT64"
+			},
+			{
+				"name": "ExposureID",
+				"type": "INT64"
+			},
+			{
+				"name": "CreateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "ID",
+				"type": "INT64"
+			},
+			{
+				"name": "Topic",
+				"type": "INT32"
+			},
+			{
+				"name": "Language",
+				"type": "INT32"
+			},
+			{
+				"name": "BeanVersion",
+				"type": "INT32"
+			},
+			{
+				"name": "UpdateUserID",
+				"type": "INT64"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

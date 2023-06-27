@@ -1,0 +1,99 @@
+{
+	"name": "DS_ASQL_TABLE",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "insurance_analytics"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "CONTROL_ID",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "SNOWFLAKE_WORSKPACE",
+				"type": "varchar"
+			},
+			{
+				"name": "SERVER_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "DATABASE_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "SCHEMA_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "TABLE_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "ETL_VELOCITY",
+				"type": "varchar"
+			},
+			{
+				"name": "CURRENT_VALUE",
+				"type": "varchar"
+			},
+			{
+				"name": "PREVIOUS_VALUE",
+				"type": "varchar"
+			},
+			{
+				"name": "IS_INCREMENTAL_LOAD",
+				"type": "bit"
+			},
+			{
+				"name": "EDW_CREATED_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "EDW_CREATED_BY",
+				"type": "varchar"
+			},
+			{
+				"name": "EDW_MODIFIED_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "EDW_MODIFIED_BY",
+				"type": "varchar"
+			},
+			{
+				"name": "DATALAKE_CONTAINER",
+				"type": "varchar"
+			},
+			{
+				"name": "DATALAKE_FOLDER",
+				"type": "varchar"
+			},
+			{
+				"name": "DISABLE_LOAD_FLAG",
+				"type": "bit"
+			},
+			{
+				"name": "CDC_COLUMN_NAME",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "raw_control_table"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

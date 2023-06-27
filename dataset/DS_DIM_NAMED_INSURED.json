@@ -1,0 +1,127 @@
+{
+	"name": "DS_DIM_NAMED_INSURED",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/POLICY-CENTER"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "NAMED_INSURED_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "NAMED_INSURED_KEY",
+				"type": "varchar"
+			},
+			{
+				"name": "ETL_END_EFF_DTS",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_END_EXP_DTS",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "POLICY_KEY",
+				"type": "varchar"
+			},
+			{
+				"name": "SOURCE",
+				"type": "varchar"
+			},
+			{
+				"name": "MAILING_ADDRESS_1",
+				"type": "varchar"
+			},
+			{
+				"name": "MAILING_ADDRESS_2",
+				"type": "varchar"
+			},
+			{
+				"name": "MAILING_ADDRESS_3",
+				"type": "varchar"
+			},
+			{
+				"name": "MAILING_CITY",
+				"type": "varchar"
+			},
+			{
+				"name": "MAILING_STATE_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "MAILING_ZIP_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "PRIM_INSURED_FL",
+				"type": "varchar"
+			},
+			{
+				"name": "INSURED_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "EMAILADDRESS2",
+				"type": "varchar"
+			},
+			{
+				"name": "EMAILADDRESS1",
+				"type": "varchar"
+			},
+			{
+				"name": "HOMEPHONE",
+				"type": "varchar"
+			},
+			{
+				"name": "PRIMARYPHONE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CELLPHONE",
+				"type": "varchar"
+			},
+			{
+				"name": "WORKPHONE",
+				"type": "varchar"
+			},
+			{
+				"name": "ETL_ACTIVE_FL",
+				"type": "varchar"
+			},
+			{
+				"name": "ETL_ADD_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_LAST_UPDATE_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "NAMED_INSURED",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "PCDM",
+			"table": "DW_DIM_NAMED_INSURED"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,14 @@
+{
+	"name": "LS_GH_SP",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SharePointOnlineList",
+		"typeProperties": {
+			"siteUrl": "https://kasmoco.sharepoint.com/sites/DataEngineering",
+			"tenantId": "979ffdff-332b-406c-8644-6d8db569225f",
+			"servicePrincipalId": "ce307e18-5e8e-40c7-b314-850263800130",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDBBM0RGN0QwLUZGNjYtNDYzMC05RDMwLTk5RDNDNUNBREEyMF8yYWVhMDIzYS00OGQ5LTRlMTItYWU5Yi1lZjQ3N2M0YzAyYjMiDQp9"
+		}
+	}
+}

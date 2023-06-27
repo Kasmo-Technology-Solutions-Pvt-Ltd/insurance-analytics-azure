@@ -1,0 +1,142 @@
+{
+	"name": "DS_PC_USER",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/POLICY-CENTER"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "dbo_PC_USER_2023-04-17 18:18:05:028.parquet",
+				"folderPath": "2023/2023-04/2023-04-17",
+				"fileSystem": "policy-center"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "LoadCommandID",
+				"type": "INT64"
+			},
+			{
+				"name": "PublicID",
+				"type": "UTF8"
+			},
+			{
+				"name": "UserType",
+				"type": "INT32"
+			},
+			{
+				"name": "UseProducerCodeSecurity",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "UserSettingsID",
+				"type": "INT64"
+			},
+			{
+				"name": "CreateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "SessionTimeoutSecs",
+				"type": "INT32"
+			},
+			{
+				"name": "OrganizationID",
+				"type": "INT64"
+			},
+			{
+				"name": "VacationStatus",
+				"type": "INT32"
+			},
+			{
+				"name": "Department",
+				"type": "UTF8"
+			},
+			{
+				"name": "ExternalUser",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "UpdateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "UseOrgAddress",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "Language",
+				"type": "INT32"
+			},
+			{
+				"name": "ExperienceLevel",
+				"type": "INT32"
+			},
+			{
+				"name": "Locale",
+				"type": "INT32"
+			},
+			{
+				"name": "ID",
+				"type": "INT64"
+			},
+			{
+				"name": "CreateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "BeanVersion",
+				"type": "INT32"
+			},
+			{
+				"name": "DefaultPhoneCountry",
+				"type": "INT32"
+			},
+			{
+				"name": "Retired",
+				"type": "INT64"
+			},
+			{
+				"name": "ValidationLevel",
+				"type": "INT32"
+			},
+			{
+				"name": "UpdateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "CredentialID",
+				"type": "INT64"
+			},
+			{
+				"name": "SystemUserType",
+				"type": "INT32"
+			},
+			{
+				"name": "DefaultCountry",
+				"type": "INT32"
+			},
+			{
+				"name": "TimeZone",
+				"type": "INT32"
+			},
+			{
+				"name": "ContactID",
+				"type": "INT64"
+			},
+			{
+				"name": "JobTitle",
+				"type": "UTF8"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,48 @@
+{
+	"name": "DS_SQLSERVER_TABLE",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "parameter_SQL",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"servername": {
+					"value": "@dataset().servername",
+					"type": "Expression"
+				},
+				"db_name": {
+					"value": "@dataset().db_name",
+					"type": "Expression"
+				},
+				"username": {
+					"value": "@dataset().username",
+					"type": "Expression"
+				},
+				"password": {
+					"value": "@dataset().password",
+					"type": "Expression"
+				}
+			}
+		},
+		"parameters": {
+			"db_name": {
+				"type": "string"
+			},
+			"servername": {
+				"type": "string"
+			},
+			"username": {
+				"type": "string"
+			},
+			"password": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "insurance_analytics"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

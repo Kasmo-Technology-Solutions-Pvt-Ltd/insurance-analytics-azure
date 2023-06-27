@@ -1,0 +1,110 @@
+{
+	"name": "DS_PC_EFFECTIVEDATEDFIELDS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/POLICY-CENTER"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "dbo_PC_EFFECTIVEDATEDFIELDS_2023-04-17 18:18:05:028.parquet",
+				"folderPath": "2023/2023-04/2023-04-17",
+				"fileSystem": "policy-center"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "CreateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "PolicyAddress",
+				"type": "INT64"
+			},
+			{
+				"name": "PublicID",
+				"type": "UTF8"
+			},
+			{
+				"name": "SecondaryNamedInsured",
+				"type": "INT64"
+			},
+			{
+				"name": "BillingContact",
+				"type": "INT64"
+			},
+			{
+				"name": "ArchivePartition",
+				"type": "INT64"
+			},
+			{
+				"name": "BeanVersion",
+				"type": "INT32"
+			},
+			{
+				"name": "CreateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "ChangeType",
+				"type": "INT32"
+			},
+			{
+				"name": "BasedOnID",
+				"type": "INT64"
+			},
+			{
+				"name": "UpdateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "FixedID",
+				"type": "INT64"
+			},
+			{
+				"name": "OfferingCode",
+				"type": "UTF8"
+			},
+			{
+				"name": "PrimaryNamedInsured",
+				"type": "INT64"
+			},
+			{
+				"name": "EffectiveDate",
+				"type": "INT96"
+			},
+			{
+				"name": "UpdateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "PrimaryLocation",
+				"type": "INT64"
+			},
+			{
+				"name": "ProducerCodeID",
+				"type": "INT64"
+			},
+			{
+				"name": "ID",
+				"type": "INT64"
+			},
+			{
+				"name": "BranchID",
+				"type": "INT64"
+			},
+			{
+				"name": "ExpirationDate",
+				"type": "INT96"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

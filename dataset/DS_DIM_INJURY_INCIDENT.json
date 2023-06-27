@@ -1,0 +1,137 @@
+{
+	"name": "DS_DIM_INJURY_INCIDENT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/CLAIM-CENTER"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ICINJ_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "INCIDENT_KEY",
+				"type": "varchar"
+			},
+			{
+				"name": "INCIDENT_SBTYP_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "MEDICARE_HIC_NO",
+				"type": "varchar"
+			},
+			{
+				"name": "SHF_RCVD_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "INJURY_TYP_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "SOURCE",
+				"type": "varchar"
+			},
+			{
+				"name": "INCIDENT_TXT",
+				"type": "varchar"
+			},
+			{
+				"name": "MEDICAL_TREATEMENT_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "MEDICARE_PART_B_ELIGIBLE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "INJURY_PRTY_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "MEDICARE_ONGG_RSPTY_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "MEDICARE_WORKERS_COMP_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "DEG_OF_DISABILITY_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "INJURY_PRTY_NM_PFX_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "INJURY_PRTY_FRST_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "INJURY_PRTY_MDL_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "INJURY_PRTY_LAST_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "INJURY_PRTY_NM_SFX_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "INCIDENT_DETAILEDINJURY_URYTYPE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "INCIDENT_DETAILEDINJURY_URYTYPE_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "INCIDENT_GENERALINJURY_URYTYPE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "INCIDENT_GENERALINJURY_URYTYPE_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "INCIDENT_SEVERITY",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ACTIVE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "ETL_ADD_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_LAST_UPDATE_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "CCDM",
+			"table": "DW_DIM_INJURY_INCIDENT"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

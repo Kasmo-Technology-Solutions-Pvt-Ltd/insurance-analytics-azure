@@ -1,0 +1,31 @@
+{
+	"name": "ds_gh_tgt_multiplefolders_customer",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage9",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"File_Name": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "Greenhouse Analytics"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().File_Name",
+					"type": "Expression"
+				},
+				"folderPath": "test/customer_data",
+				"fileSystem": "greenhouse-analytics"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

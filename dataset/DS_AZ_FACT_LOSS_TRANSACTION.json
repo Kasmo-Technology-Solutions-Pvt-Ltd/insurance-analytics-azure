@@ -1,0 +1,258 @@
+{
+	"name": "DS_AZ_FACT_LOSS_TRANSACTION",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/CLAIM-CENTER/CC_Tables"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "LOSS_TRANSACTION_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PRODUCT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "POLICY_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "COVG_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CLMNT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CLAIM_FEATURE_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PRIM_NAMED_INSURED_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CHECK_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "VEHICLE_INCIDENT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "INJ_INCIDENT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MONTH_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "DATE_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CLAIM_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ALT_LOSS_TRANSACTION_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ORG_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LOC_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AGENT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AGENCY_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "VENDOR_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "REC_TYPE_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TRANSACTION_PROC_DT_ID",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ACCTG_PRD_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CHECK_DT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ACCT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TRANSACTION_PROC_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "RISK_TYPE_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "SOURCE",
+				"type": "varchar"
+			},
+			{
+				"name": "TRANSACTION_TYPE_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "TRANSACTION_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "TRANSACTION_SEQ",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TRANSACTION_ALLOC_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "CHECK_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "TRANSACTION_AMOUNT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RESERVE_CHANGE_AMOUNT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ETL_ACTIVE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "ETL_ADD_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_LAST_UPDATE_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "PMT_TYP_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "CHECK_KEY",
+				"type": "varchar"
+			},
+			{
+				"name": "RCVRY_PAYR_NM",
+				"type": "varchar"
+			},
+			{
+				"name": "RCVRY_CATG_TYP_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "TRANSACTION_DOESNT_ERODERESERVE",
+				"type": "varchar"
+			},
+			{
+				"name": "TRANSACTION_LINEITEM",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TRANSACTION_STATUS",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TRANSACTION_COST_TYPE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TRN_STATUS_DESCRIPTION_EXT",
+				"type": "varchar"
+			},
+			{
+				"name": "PMT_TYP_CODE_DESCRIPTION_EXT",
+				"type": "varchar"
+			},
+			{
+				"name": "TRANSACTION_LINEITEM_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "CURRENCY_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "TRANSACTION_COST_TYPE_DESCRIPTION",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "CCDM",
+			"table": "DW_FACT_LOSS_TRANSACTION"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

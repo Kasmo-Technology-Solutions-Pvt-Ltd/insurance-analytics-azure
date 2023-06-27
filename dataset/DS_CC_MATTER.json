@@ -1,0 +1,298 @@
+{
+	"name": "DS_CC_MATTER",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/CLAIM-CENTER"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "dbo_CC_MATTER_2023-04-17 17:38:03:549.parquet",
+				"folderPath": "2023/2023-04/2023-04-17",
+				"fileSystem": "claim-center"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "ValidationLevel",
+				"type": "INT32"
+			},
+			{
+				"name": "FilingDate",
+				"type": "INT96"
+			},
+			{
+				"name": "Retired",
+				"type": "INT64"
+			},
+			{
+				"name": "Arbitration",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "FirstNotice",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "SuitType",
+				"type": "INT32"
+			},
+			{
+				"name": "PunitiveAmount",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "Room",
+				"type": "UTF8"
+			},
+			{
+				"name": "FinalSettleCost",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "PunitiveDamages",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "CourtType",
+				"type": "INT32"
+			},
+			{
+				"name": "AssignedUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "ID",
+				"type": "INT64"
+			},
+			{
+				"name": "MediationDate",
+				"type": "INT96"
+			},
+			{
+				"name": "BeanVersion",
+				"type": "INT32"
+			},
+			{
+				"name": "CaseNumber",
+				"type": "UTF8"
+			},
+			{
+				"name": "PreviousQueueID",
+				"type": "INT64"
+			},
+			{
+				"name": "SentToDefenseDate",
+				"type": "INT96"
+			},
+			{
+				"name": "ArbitrationDate",
+				"type": "INT96"
+			},
+			{
+				"name": "FileDate",
+				"type": "INT96"
+			},
+			{
+				"name": "StructuredSettle",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "AdDamnumAmount",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "HearingDate",
+				"type": "INT96"
+			},
+			{
+				"name": "FinalSettleDate",
+				"type": "INT96"
+			},
+			{
+				"name": "ResponseDue",
+				"type": "INT96"
+			},
+			{
+				"name": "AdDamnumSpecified",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "ArbitrationRoom",
+				"type": "UTF8"
+			},
+			{
+				"name": "CloseDate",
+				"type": "INT96"
+			},
+			{
+				"name": "TrialDate",
+				"type": "INT96"
+			},
+			{
+				"name": "MatterType",
+				"type": "INT32"
+			},
+			{
+				"name": "MatterCaseNumber",
+				"type": "UTF8"
+			},
+			{
+				"name": "ServiceDate",
+				"type": "INT96"
+			},
+			{
+				"name": "AssignmentDate",
+				"type": "INT96"
+			},
+			{
+				"name": "PreviousUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "SubroRelated",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "RiskType",
+				"type": "INT32"
+			},
+			{
+				"name": "ReopenedReason",
+				"type": "INT32"
+			},
+			{
+				"name": "DefenseApptDate",
+				"type": "INT96"
+			},
+			{
+				"name": "MediationRoom",
+				"type": "UTF8"
+			},
+			{
+				"name": "AssignedByUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "PublicID",
+				"type": "UTF8"
+			},
+			{
+				"name": "SubrogationSummaryID",
+				"type": "INT64"
+			},
+			{
+				"name": "ArchivePartition",
+				"type": "INT64"
+			},
+			{
+				"name": "CreateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "MotionSummaryJgmt",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "FinalLegalCost",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "LegalSpecialty",
+				"type": "INT32"
+			},
+			{
+				"name": "ResponseFiled",
+				"type": "INT96"
+			},
+			{
+				"name": "AssignedGroupID",
+				"type": "INT64"
+			},
+			{
+				"name": "MethodServed",
+				"type": "INT32"
+			},
+			{
+				"name": "UpdateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "AssignedQueueID",
+				"type": "INT64"
+			},
+			{
+				"name": "DocketNumber",
+				"type": "UTF8"
+			},
+			{
+				"name": "AssignmentStatus",
+				"type": "INT32"
+			},
+			{
+				"name": "Resolution",
+				"type": "INT32"
+			},
+			{
+				"name": "ClaimID",
+				"type": "INT64"
+			},
+			{
+				"name": "HearingRoom",
+				"type": "UTF8"
+			},
+			{
+				"name": "LoadCommandID",
+				"type": "INT64"
+			},
+			{
+				"name": "UpdateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "Name",
+				"type": "UTF8"
+			},
+			{
+				"name": "DeclaratoryJgmt",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "CreateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "PrimaryCause",
+				"type": "INT32"
+			},
+			{
+				"name": "PreviousGroupID",
+				"type": "INT64"
+			},
+			{
+				"name": "CourtDistrict",
+				"type": "INT32"
+			},
+			{
+				"name": "VenueRating",
+				"type": "INT32"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

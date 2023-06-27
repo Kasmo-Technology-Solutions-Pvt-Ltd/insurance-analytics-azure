@@ -1,0 +1,246 @@
+{
+	"name": "DS_PC_POLICYCONTACTROLE",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/POLICY-CENTER"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "dbo_PC_POLICYCONTACTROLE_2023-04-17 18:18:05:028.parquet",
+				"folderPath": "2023/2023-04/2023-04-17",
+				"fileSystem": "policy-center"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "LicenseNumberInternal",
+				"type": "UTF8"
+			},
+			{
+				"name": "ExcludedInternal",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "CompanyNameKanjiInternalDenorm",
+				"type": "UTF8"
+			},
+			{
+				"name": "FixedID",
+				"type": "INT64"
+			},
+			{
+				"name": "State",
+				"type": "INT32"
+			},
+			{
+				"name": "OwnershipPct",
+				"type": "INT32"
+			},
+			{
+				"name": "CommercialPropertyLine",
+				"type": "INT64"
+			},
+			{
+				"name": "UpdateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "DateOfBirthInternal",
+				"type": "INT96"
+			},
+			{
+				"name": "GeneralLiabilityLine",
+				"type": "INT64"
+			},
+			{
+				"name": "LastNameInternalDenorm",
+				"type": "UTF8"
+			},
+			{
+				"name": "ID",
+				"type": "INT64"
+			},
+			{
+				"name": "CreateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "MaritalStatusInternal",
+				"type": "INT32"
+			},
+			{
+				"name": "PolicyLine",
+				"type": "INT64"
+			},
+			{
+				"name": "BeanVersion",
+				"type": "INT32"
+			},
+			{
+				"name": "LicenseStateInternal",
+				"type": "INT32"
+			},
+			{
+				"name": "UpdateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "FirstNameInternalDenorm",
+				"type": "UTF8"
+			},
+			{
+				"name": "QuickQuoteNumber",
+				"type": "INT32"
+			},
+			{
+				"name": "WorkersCompLine",
+				"type": "INT64"
+			},
+			{
+				"name": "Relationship",
+				"type": "UTF8"
+			},
+			{
+				"name": "Included",
+				"type": "INT32"
+			},
+			{
+				"name": "BranchID",
+				"type": "INT64"
+			},
+			{
+				"name": "ClassCodeID",
+				"type": "INT64"
+			},
+			{
+				"name": "CompanyNameInternalDenorm",
+				"type": "UTF8"
+			},
+			{
+				"name": "DoNotOrderMVR",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "ParticleInternal",
+				"type": "UTF8"
+			},
+			{
+				"name": "PublicID",
+				"type": "UTF8"
+			},
+			{
+				"name": "CompanyNameInternal",
+				"type": "UTF8"
+			},
+			{
+				"name": "ApplicableGoodDriverDiscount",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "InlandMarineLine",
+				"type": "INT64"
+			},
+			{
+				"name": "AccountContactRole",
+				"type": "INT64"
+			},
+			{
+				"name": "CreateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "CompanyNameKanjiInternal",
+				"type": "UTF8"
+			},
+			{
+				"name": "NumberOfViolations",
+				"type": "INT32"
+			},
+			{
+				"name": "LastNameKanjiInternalDenorm",
+				"type": "UTF8"
+			},
+			{
+				"name": "LastNameKanjiInternal",
+				"type": "UTF8"
+			},
+			{
+				"name": "BusinessOwnersLine",
+				"type": "INT64"
+			},
+			{
+				"name": "EffectiveDate",
+				"type": "INT96"
+			},
+			{
+				"name": "ExpirationDate",
+				"type": "INT96"
+			},
+			{
+				"name": "ContactDenorm",
+				"type": "INT64"
+			},
+			{
+				"name": "RelationshipTitleInternal",
+				"type": "INT32"
+			},
+			{
+				"name": "LastNameInternal",
+				"type": "UTF8"
+			},
+			{
+				"name": "BusinessAutoLine",
+				"type": "INT64"
+			},
+			{
+				"name": "PersonalAutoLine",
+				"type": "INT64"
+			},
+			{
+				"name": "NumberOfAccidents",
+				"type": "INT32"
+			},
+			{
+				"name": "SeqNumber",
+				"type": "INT32"
+			},
+			{
+				"name": "ArchivePartition",
+				"type": "INT64"
+			},
+			{
+				"name": "ChangeType",
+				"type": "INT32"
+			},
+			{
+				"name": "BasedOnID",
+				"type": "INT64"
+			},
+			{
+				"name": "FirstNameKanjiInternalDenorm",
+				"type": "UTF8"
+			},
+			{
+				"name": "FirstNameInternal",
+				"type": "UTF8"
+			},
+			{
+				"name": "FirstNameKanjiInternal",
+				"type": "UTF8"
+			},
+			{
+				"name": "Subtype",
+				"type": "INT32"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

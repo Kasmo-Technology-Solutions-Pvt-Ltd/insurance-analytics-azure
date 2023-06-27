@@ -1,0 +1,154 @@
+{
+	"name": "DS_CC_USER",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/CLAIM-CENTER"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "dbo_CC_USER_2023-04-17 17:38:03:549.parquet",
+				"folderPath": "2023/2023-04/2023-04-17",
+				"fileSystem": "claim-center"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "ValidationLevel",
+				"type": "INT32"
+			},
+			{
+				"name": "ExternalUser",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "Retired",
+				"type": "INT64"
+			},
+			{
+				"name": "OrganizationID",
+				"type": "INT64"
+			},
+			{
+				"name": "VacationStatus",
+				"type": "INT32"
+			},
+			{
+				"name": "PublicID",
+				"type": "UTF8"
+			},
+			{
+				"name": "CreateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "CredentialID",
+				"type": "INT64"
+			},
+			{
+				"name": "DefaultCountry",
+				"type": "INT32"
+			},
+			{
+				"name": "ID",
+				"type": "INT64"
+			},
+			{
+				"name": "BeanVersion",
+				"type": "INT32"
+			},
+			{
+				"name": "TimeZone",
+				"type": "INT32"
+			},
+			{
+				"name": "Department",
+				"type": "UTF8"
+			},
+			{
+				"name": "UpdateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "PolicyType",
+				"type": "INT32"
+			},
+			{
+				"name": "DefaultPhoneCountry",
+				"type": "INT32"
+			},
+			{
+				"name": "UserSettingsID",
+				"type": "INT64"
+			},
+			{
+				"name": "LoadCommandID",
+				"type": "INT64"
+			},
+			{
+				"name": "ContactID",
+				"type": "INT64"
+			},
+			{
+				"name": "AuthorityProfileID",
+				"type": "INT64"
+			},
+			{
+				"name": "UpdateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "Locale",
+				"type": "INT32"
+			},
+			{
+				"name": "ExperienceLevel",
+				"type": "INT32"
+			},
+			{
+				"name": "QuickClaim",
+				"type": "INT32"
+			},
+			{
+				"name": "CreateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "LossType",
+				"type": "INT32"
+			},
+			{
+				"name": "SystemUserType",
+				"type": "INT32"
+			},
+			{
+				"name": "Language",
+				"type": "INT32"
+			},
+			{
+				"name": "NewlyAssignedActivities",
+				"type": "INT32"
+			},
+			{
+				"name": "JobTitle",
+				"type": "UTF8"
+			},
+			{
+				"name": "OffsetStatsUpdateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "SessionTimeoutSecs",
+				"type": "INT32"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

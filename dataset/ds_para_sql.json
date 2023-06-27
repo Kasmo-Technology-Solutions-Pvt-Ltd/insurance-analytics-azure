@@ -1,0 +1,30 @@
+{
+	"name": "ds_para_sql",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "parameter_SQL",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"servername": "tcp:99.233.131.158,49172",
+				"db_name": "gw_cc1",
+				"username": "db_admin",
+				"password": "Kasmo@123"
+			}
+		},
+		"parameters": {
+			"table_schema": {
+				"type": "string"
+			},
+			"table_name": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "insurance_analytics"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

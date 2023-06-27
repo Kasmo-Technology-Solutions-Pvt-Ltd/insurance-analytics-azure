@@ -1,0 +1,208 @@
+{
+	"name": "DS_CC_POLICY",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/CLAIM-CENTER"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "dbo_CC_POLICY_2023-04-17 17:38:03:549.parquet",
+				"folderPath": "2023/2023-04/2023-04-17",
+				"fileSystem": "claim-center"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "ValidationLevel",
+				"type": "INT32"
+			},
+			{
+				"name": "RetroactiveDate",
+				"type": "INT96"
+			},
+			{
+				"name": "OtherInsurance",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "Retired",
+				"type": "INT64"
+			},
+			{
+				"name": "CoverageForm",
+				"type": "INT32"
+			},
+			{
+				"name": "ForeignCoverage",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "PolicySuffix",
+				"type": "UTF8"
+			},
+			{
+				"name": "PolicySource",
+				"type": "INT32"
+			},
+			{
+				"name": "EffectiveDate",
+				"type": "INT96"
+			},
+			{
+				"name": "PublicID",
+				"type": "UTF8"
+			},
+			{
+				"name": "OrigEffectiveDate",
+				"type": "INT96"
+			},
+			{
+				"name": "ArchivePartition",
+				"type": "INT64"
+			},
+			{
+				"name": "ExpirationDate",
+				"type": "INT96"
+			},
+			{
+				"name": "CancellationDate",
+				"type": "INT96"
+			},
+			{
+				"name": "CustomerServiceTier",
+				"type": "INT32"
+			},
+			{
+				"name": "TotalProperties",
+				"type": "INT32"
+			},
+			{
+				"name": "CreateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "AssignedRisk",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "ID",
+				"type": "INT64"
+			},
+			{
+				"name": "ProducerCode",
+				"type": "UTF8"
+			},
+			{
+				"name": "BeanVersion",
+				"type": "INT32"
+			},
+			{
+				"name": "InsuredSICCode",
+				"type": "UTF8"
+			},
+			{
+				"name": "Verified",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "Currency",
+				"type": "INT32"
+			},
+			{
+				"name": "ReturnToWorkPrgm",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "UpdateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "PolicyType",
+				"type": "INT32"
+			},
+			{
+				"name": "UnderwritingCo",
+				"type": "INT32"
+			},
+			{
+				"name": "LoadCommandID",
+				"type": "INT64"
+			},
+			{
+				"name": "AccountNumber",
+				"type": "UTF8"
+			},
+			{
+				"name": "WCOtherStates",
+				"type": "UTF8"
+			},
+			{
+				"name": "PolicyNumber",
+				"type": "UTF8"
+			},
+			{
+				"name": "UpdateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "FinancialInterests",
+				"type": "UTF8"
+			},
+			{
+				"name": "Notes",
+				"type": "UTF8"
+			},
+			{
+				"name": "Status",
+				"type": "INT32"
+			},
+			{
+				"name": "PolicyRatingPlan",
+				"type": "INT32"
+			},
+			{
+				"name": "PolicySystemPeriodID",
+				"type": "INT64"
+			},
+			{
+				"name": "WCStates",
+				"type": "UTF8"
+			},
+			{
+				"name": "Participation",
+				"type": "DECIMAL",
+				"precision": 4,
+				"scale": 1
+			},
+			{
+				"name": "CreateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "ReportingDate",
+				"type": "INT96"
+			},
+			{
+				"name": "TotalVehicles",
+				"type": "INT32"
+			},
+			{
+				"name": "OtherInsInfo",
+				"type": "UTF8"
+			},
+			{
+				"name": "UnderwritingGroup",
+				"type": "INT32"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

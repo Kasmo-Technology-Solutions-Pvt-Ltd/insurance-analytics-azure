@@ -1,0 +1,92 @@
+{
+	"name": "DS_DW_DIM_CLAIMACTIVITY",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/CLAIM-CENTER"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ACTIVITY_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ACTIVITY_KEY",
+				"type": "varchar"
+			},
+			{
+				"name": "SOURCE",
+				"type": "varchar"
+			},
+			{
+				"name": "ACTIVITY_PATTERN_CD",
+				"type": "varchar"
+			},
+			{
+				"name": "ACTIVITY_PATTERN_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "ACTIVITY_ASSIGNMENT_TS",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ACTIVITY_SUBJECT_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "ACTIVITY_TYPECODE",
+				"type": "varchar"
+			},
+			{
+				"name": "ETL_ADD_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_LAST_UPDATE_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_ACTIVE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "ACTIVITY_EXPOSUREID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ACTIVITY_UPDATETIME",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CLAIM_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "CLAIM_ID",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "CCDM",
+			"table": "DW_DIM_CLAIMACTIVITY"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,166 @@
+{
+	"name": "DS_CC_DOCUMENT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/CLAIM-CENTER"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "dbo_CC_DOCUMENT_2023-04-17 17:38:03:549.parquet",
+				"folderPath": "2023/2023-04/2023-04-17",
+				"fileSystem": "claim-center"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "Retired",
+				"type": "INT64"
+			},
+			{
+				"name": "MimeType",
+				"type": "UTF8"
+			},
+			{
+				"name": "Type",
+				"type": "INT32"
+			},
+			{
+				"name": "Author",
+				"type": "UTF8"
+			},
+			{
+				"name": "MatterID",
+				"type": "INT64"
+			},
+			{
+				"name": "PublicID",
+				"type": "UTF8"
+			},
+			{
+				"name": "Obsolete",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "AuthorDenorm",
+				"type": "UTF8"
+			},
+			{
+				"name": "ClaimContactID",
+				"type": "INT64"
+			},
+			{
+				"name": "ArchivePartition",
+				"type": "INT64"
+			},
+			{
+				"name": "Inbound",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "CreateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "ExposureID",
+				"type": "INT64"
+			},
+			{
+				"name": "DocumentIdentifier",
+				"type": "UTF8"
+			},
+			{
+				"name": "ID",
+				"type": "INT64"
+			},
+			{
+				"name": "BeanVersion",
+				"type": "INT32"
+			},
+			{
+				"name": "Recipient",
+				"type": "UTF8"
+			},
+			{
+				"name": "NameDenorm",
+				"type": "UTF8"
+			},
+			{
+				"name": "UpdateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "DocUID",
+				"type": "UTF8"
+			},
+			{
+				"name": "Description",
+				"type": "UTF8"
+			},
+			{
+				"name": "DMS",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "ClaimID",
+				"type": "INT64"
+			},
+			{
+				"name": "LoadCommandID",
+				"type": "INT64"
+			},
+			{
+				"name": "DateCreated",
+				"type": "INT96"
+			},
+			{
+				"name": "SecurityType",
+				"type": "INT32"
+			},
+			{
+				"name": "UpdateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "PendingDocUID",
+				"type": "UTF8"
+			},
+			{
+				"name": "Name",
+				"type": "UTF8"
+			},
+			{
+				"name": "Status",
+				"type": "INT32"
+			},
+			{
+				"name": "Section",
+				"type": "INT32"
+			},
+			{
+				"name": "DateModified",
+				"type": "INT96"
+			},
+			{
+				"name": "CreateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "Language",
+				"type": "INT32"
+			},
+			{
+				"name": "DocumentIdentifierDenorm",
+				"type": "UTF8"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,182 @@
+{
+	"name": "DS_CC_ACTIVITYPATTERN",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/CLAIM-CENTER"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "dbo_CC_ACTIVITYPATTERN_2023-04-17 17:38:03:549.parquet",
+				"folderPath": "2023/2023-04/2023-04-17",
+				"fileSystem": "claim-center"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "Command",
+				"type": "UTF8"
+			},
+			{
+				"name": "ExternallyOwned",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "Retired",
+				"type": "INT64"
+			},
+			{
+				"name": "Type",
+				"type": "INT32"
+			},
+			{
+				"name": "TargetDays",
+				"type": "INT32"
+			},
+			{
+				"name": "TargetIncludeDays",
+				"type": "INT32"
+			},
+			{
+				"name": "EscBusCalLocPath",
+				"type": "UTF8"
+			},
+			{
+				"name": "PublicID",
+				"type": "UTF8"
+			},
+			{
+				"name": "Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "EscalationInclDays",
+				"type": "INT32"
+			},
+			{
+				"name": "DocumentTemplate",
+				"type": "UTF8"
+			},
+			{
+				"name": "EscalationBusCalTag",
+				"type": "INT32"
+			},
+			{
+				"name": "TargetHours",
+				"type": "INT32"
+			},
+			{
+				"name": "CreateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "ShortSubject",
+				"type": "UTF8"
+			},
+			{
+				"name": "TargetBusCalLocPath",
+				"type": "UTF8"
+			},
+			{
+				"name": "ID",
+				"type": "INT64"
+			},
+			{
+				"name": "BeanVersion",
+				"type": "INT32"
+			},
+			{
+				"name": "Importance",
+				"type": "INT32"
+			},
+			{
+				"name": "AutomatedOnly",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "TargetBusCalTag",
+				"type": "INT32"
+			},
+			{
+				"name": "UpdateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "Description",
+				"type": "UTF8"
+			},
+			{
+				"name": "ClaimLossType",
+				"type": "INT32"
+			},
+			{
+				"name": "Subject",
+				"type": "UTF8"
+			},
+			{
+				"name": "LoadCommandID",
+				"type": "INT64"
+			},
+			{
+				"name": "UpdateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "ClosedClaimAvlble",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "Priority",
+				"type": "INT32"
+			},
+			{
+				"name": "EmailTemplate",
+				"type": "UTF8"
+			},
+			{
+				"name": "EscalationHours",
+				"type": "INT32"
+			},
+			{
+				"name": "Category",
+				"type": "INT32"
+			},
+			{
+				"name": "EscalationStartPt",
+				"type": "INT32"
+			},
+			{
+				"name": "TargetStartPoint",
+				"type": "INT32"
+			},
+			{
+				"name": "CreateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "Mandatory",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "EscalationDays",
+				"type": "INT32"
+			},
+			{
+				"name": "ActivityClass",
+				"type": "INT32"
+			},
+			{
+				"name": "Recurring",
+				"type": "BOOLEAN"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

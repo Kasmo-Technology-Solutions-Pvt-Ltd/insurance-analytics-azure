@@ -1,0 +1,118 @@
+{
+	"name": "ds_dw_dim_location",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/CLAIM-CENTER/CC_Tables"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "LOCATION_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LOCATION_KEY",
+				"type": "varchar"
+			},
+			{
+				"name": "ETL_END_EFF_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_END_EXP_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "END_EFF_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "END_EXP_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "SOURCE",
+				"type": "varchar"
+			},
+			{
+				"name": "LOCATION_NO",
+				"type": "varchar"
+			},
+			{
+				"name": "STREET_1_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "STREET_2_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "STREET_3_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "COUNTRY_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "COUNTRY_TEXT",
+				"type": "varchar"
+			},
+			{
+				"name": "REGION_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "REGION_TEXT",
+				"type": "varchar"
+			},
+			{
+				"name": "CITY_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "POSTAL_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "COUNTY_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "ETL_ACTIVE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "ETL_ADD_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_LAST_UPDATE_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "PCDM",
+			"table": "DW_DIM_LOCATION"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

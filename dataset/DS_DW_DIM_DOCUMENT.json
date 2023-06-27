@@ -1,0 +1,86 @@
+{
+	"name": "DS_DW_DIM_DOCUMENT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/CLAIM-CENTER"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "DOCUMENT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CLAIM_IDENTIFIER",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CLAIM_FOLDER_LABEL_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "DOCUMENT_AUTHOR",
+				"type": "varchar"
+			},
+			{
+				"name": "DOCUMENT_CREATED_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "DOCUMENT_RECIPIENT",
+				"type": "varchar"
+			},
+			{
+				"name": "SOURCE",
+				"type": "varchar"
+			},
+			{
+				"name": "CLAIM_NUMBER_EXT",
+				"type": "varchar"
+			},
+			{
+				"name": "DOCUMENT_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "DOCUMENT_KEY",
+				"type": "varchar"
+			},
+			{
+				"name": "ETL_ADD_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_LAST_UPDATE_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ACTIVE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "CLAIM_ID",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "CCDM",
+			"table": "DW_DIM_DOCUMENT"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

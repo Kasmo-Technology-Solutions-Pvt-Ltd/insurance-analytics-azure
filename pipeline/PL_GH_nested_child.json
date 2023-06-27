@@ -1,0 +1,150 @@
+{
+	"name": "PL_GH_nested_child",
+	"properties": {
+		"activities": [
+			{
+				"name": "ForEach_File",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "Meta_data",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Meta_data').output.value",
+						"type": "Expression"
+					},
+					"isSequential": true,
+					"activities": [
+						{
+							"name": "Copy data1",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [
+								{
+									"name": "RelativeURL ",
+									"value": "@{item().ServerRelativeUrl}"
+								}
+							],
+							"typeProperties": {
+								"source": {
+									"type": "BinarySource",
+									"storeSettings": {
+										"type": "HttpReadSettings",
+										"requestMethod": "GET",
+										"additionalHeaders": {
+											"value": "@{concat('Authorization:Bearer ',pipeline().parameters.GetToken)}",
+											"type": "Expression"
+										},
+										"requestTimeout": ""
+									},
+									"formatSettings": {
+										"type": "BinaryReadSettings"
+									}
+								},
+								"sink": {
+									"type": "BinarySink",
+									"storeSettings": {
+										"type": "AzureBlobFSWriteSettings"
+									}
+								},
+								"enableStaging": false
+							},
+							"inputs": [
+								{
+									"referenceName": "ds_gh_sc_nested_child",
+									"type": "DatasetReference",
+									"parameters": {
+										"Folder": {
+											"value": "@{item().ServerRelativeUrl}",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "ds_gh_tgt_nested_child",
+									"type": "DatasetReference",
+									"parameters": {
+										"FileName": {
+											"value": "@concat(item().Name)",
+											"type": "Expression"
+										},
+										"FolderName": {
+											"value": "@concat(pipeline().parameters.Foldername)",
+											"type": "Expression"
+										},
+										"dynamicfolder": {
+											"value": "@concat(substring(item().Name,0,lastIndexOf(item().Name,'_')))",
+											"type": "Expression"
+										}
+									}
+								}
+							]
+						}
+					]
+				}
+			},
+			{
+				"name": "Meta_data",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": {
+						"value": "https://kasmoco.sharepoint.com/sites/DataEngineering/_api/web/GetFolderByServerRelativeUrl('@{pipeline().parameters.Folderpath}')/files",
+						"type": "Expression"
+					},
+					"method": "GET",
+					"headers": {
+						"Authorization": {
+							"value": "@{concat('Bearer ', pipeline().parameters.GetToken)}",
+							"type": "Expression"
+						},
+						"Accept": {
+							"value": "application/json",
+							"type": "Expression"
+						}
+					}
+				}
+			}
+		],
+		"parameters": {
+			"Folderpath": {
+				"type": "string"
+			},
+			"GetToken": {
+				"type": "string"
+			},
+			"Foldername": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "Greenhouse Analytics"
+		},
+		"annotations": [],
+		"lastPublishTime": "2023-05-08T04:12:39Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

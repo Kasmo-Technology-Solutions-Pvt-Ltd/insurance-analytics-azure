@@ -1,0 +1,162 @@
+{
+	"name": "DS_PC_POLICY",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/POLICY-CENTER"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "dbo_PC_POLICY_2023-04-17 18:18:05:028.parquet",
+				"folderPath": "2023/2023-04/2023-04-17",
+				"fileSystem": "policy-center"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "DoNotPurge",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "PublicID",
+				"type": "UTF8"
+			},
+			{
+				"name": "PriorPremiums",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "IssueDate",
+				"type": "INT96"
+			},
+			{
+				"name": "PriorPremiums_cur",
+				"type": "INT32"
+			},
+			{
+				"name": "MovedPolicySourceAccountID",
+				"type": "INT64"
+			},
+			{
+				"name": "AccountID",
+				"type": "INT64"
+			},
+			{
+				"name": "CreateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "LossHistoryType",
+				"type": "INT32"
+			},
+			{
+				"name": "ExcludedFromArchive",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "ArchiveState",
+				"type": "INT32"
+			},
+			{
+				"name": "ArchiveSchemaInfo",
+				"type": "INT64"
+			},
+			{
+				"name": "ArchiveFailureDetailsID",
+				"type": "INT64"
+			},
+			{
+				"name": "PackageRisk",
+				"type": "INT32"
+			},
+			{
+				"name": "NumPriorLosses",
+				"type": "INT32"
+			},
+			{
+				"name": "UpdateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "PrimaryLanguage",
+				"type": "INT32"
+			},
+			{
+				"name": "DoNotArchive",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "ID",
+				"type": "INT64"
+			},
+			{
+				"name": "PrimaryLocale",
+				"type": "INT32"
+			},
+			{
+				"name": "ProductCode",
+				"type": "UTF8"
+			},
+			{
+				"name": "ExcludeReason",
+				"type": "UTF8"
+			},
+			{
+				"name": "CreateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "ArchiveFailureID",
+				"type": "INT64"
+			},
+			{
+				"name": "OriginalEffectiveDate",
+				"type": "INT96"
+			},
+			{
+				"name": "BeanVersion",
+				"type": "INT32"
+			},
+			{
+				"name": "ArchivePartition",
+				"type": "INT64"
+			},
+			{
+				"name": "Retired",
+				"type": "INT64"
+			},
+			{
+				"name": "UpdateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "PriorTotalIncurred",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ArchiveDate",
+				"type": "INT96"
+			},
+			{
+				"name": "PriorTotalIncurred_cur",
+				"type": "INT32"
+			},
+			{
+				"name": "ProducerCodeOfServiceID",
+				"type": "INT64"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

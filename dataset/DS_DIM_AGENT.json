@@ -1,0 +1,130 @@
+{
+	"name": "DS_DIM_AGENT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/POLICY-CENTER"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "AGENT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AGENT_KEY",
+				"type": "varchar"
+			},
+			{
+				"name": "SOURCE",
+				"type": "varchar"
+			},
+			{
+				"name": "AGENT_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "AGENT_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "AGENT_ADDRESS_1",
+				"type": "varchar"
+			},
+			{
+				"name": "AGENT_ADDRESS_2",
+				"type": "varchar"
+			},
+			{
+				"name": "AGENT_ADDRESS_3",
+				"type": "varchar"
+			},
+			{
+				"name": "AGENT_CITY",
+				"type": "varchar"
+			},
+			{
+				"name": "AGENT_STATE_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "AGENT_STATE_CODE_DESCRIPTION",
+				"type": "varchar"
+			},
+			{
+				"name": "AGENT_ZIP_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "AGENT_PHONE_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "AGENT_APPT_DATE",
+				"type": "date"
+			},
+			{
+				"name": "AGENT_TERM_DATE",
+				"type": "date"
+			},
+			{
+				"name": "AGENT_STATUS_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "MANAGER_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "REP_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "REGION_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "AGENT_LIC_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "AGENT_TAX_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "ETL_ACTIVE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "ETL_ADD_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_LAST_UPDATE_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "PRODUCERGROUP_NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "BRANCHNAME",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "PCDM",
+			"table": "DW_DIM_AGENT"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

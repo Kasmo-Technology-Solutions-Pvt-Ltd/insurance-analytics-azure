@@ -1,0 +1,31 @@
+{
+	"name": "ds_gh_sc_multiplefolders_customer",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_gh_customer",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"RelativeURL": {
+					"value": "@dataset().RelativeURL",
+					"type": "Expression"
+				}
+			}
+		},
+		"parameters": {
+			"RelativeURL": {
+				"type": "String"
+			}
+		},
+		"folder": {
+			"name": "Greenhouse Analytics"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,40 @@
+{
+	"name": "ds_gh_tgt_nested_child",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage9",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"FileName": {
+				"type": "string"
+			},
+			"FolderName": {
+				"type": "string"
+			},
+			"dynamicfolder": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "Greenhouse Analytics"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().FileName",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "Test/@{dataset().FolderName}/@{dataset().dynamicfolder}",
+					"type": "Expression"
+				},
+				"fileSystem": "greenhouse-analytics"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

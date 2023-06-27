@@ -1,0 +1,34 @@
+{
+	"name": "DS_SQL_TG",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_GW_CC",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"table_schema": {
+				"type": "string"
+			},
+			"table_name": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "insurance_analytics"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": {
+				"value": "@dataset().table_schema",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().table_name",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

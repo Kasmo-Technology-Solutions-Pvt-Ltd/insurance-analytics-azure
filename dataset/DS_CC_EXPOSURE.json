@@ -1,0 +1,452 @@
+{
+	"name": "DS_CC_EXPOSURE",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/CLAIM-CENTER"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "dbo_CC_EXPOSURE_2023-04-17 17:38:03:549.parquet",
+				"folderPath": "2023/2023-04/2023-04-17",
+				"fileSystem": "claim-center"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "IncidentID",
+				"type": "INT64"
+			},
+			{
+				"name": "SSDIEligible",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "StatLineID",
+				"type": "INT64"
+			},
+			{
+				"name": "CompBenefitsID",
+				"type": "INT64"
+			},
+			{
+				"name": "DisBenefitsID",
+				"type": "INT64"
+			},
+			{
+				"name": "CoverageID",
+				"type": "INT64"
+			},
+			{
+				"name": "BeanVersion",
+				"type": "INT32"
+			},
+			{
+				"name": "IncidentLimitReached",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "LostPropertyType",
+				"type": "INT32"
+			},
+			{
+				"name": "SSDIBenefitsID",
+				"type": "INT64"
+			},
+			{
+				"name": "WCPreexDisbltyInfo",
+				"type": "UTF8"
+			},
+			{
+				"name": "LossParty",
+				"type": "INT32"
+			},
+			{
+				"name": "JurisdictionState",
+				"type": "INT32"
+			},
+			{
+				"name": "ClaimantType",
+				"type": "INT32"
+			},
+			{
+				"name": "WageStmtSent",
+				"type": "INT96"
+			},
+			{
+				"name": "ISOReceiveDate",
+				"type": "INT96"
+			},
+			{
+				"name": "LossCategory",
+				"type": "INT32"
+			},
+			{
+				"name": "OtherCoverageInfo",
+				"type": "UTF8"
+			},
+			{
+				"name": "SettleDate",
+				"type": "INT96"
+			},
+			{
+				"name": "CloseDate",
+				"type": "INT96"
+			},
+			{
+				"name": "ClosedOutcome",
+				"type": "INT32"
+			},
+			{
+				"name": "AssignmentDate",
+				"type": "INT96"
+			},
+			{
+				"name": "ContactPermitted",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "PreviousUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "ReopenedReason",
+				"type": "INT32"
+			},
+			{
+				"name": "AssignedByUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "PublicID",
+				"type": "UTF8"
+			},
+			{
+				"name": "ClaimOrder",
+				"type": "INT32"
+			},
+			{
+				"name": "NewEmpDataID",
+				"type": "INT64"
+			},
+			{
+				"name": "ClaimantDenormID",
+				"type": "INT64"
+			},
+			{
+				"name": "WCPreexDisblty",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "Segment",
+				"type": "INT32"
+			},
+			{
+				"name": "ISOStatus",
+				"type": "INT32"
+			},
+			{
+				"name": "CoverageSubType",
+				"type": "INT32"
+			},
+			{
+				"name": "PrimaryCoverage",
+				"type": "INT32"
+			},
+			{
+				"name": "AssignedGroupID",
+				"type": "INT64"
+			},
+			{
+				"name": "DepreciatedValue",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "UpdateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "AssignedQueueID",
+				"type": "INT64"
+			},
+			{
+				"name": "DeathBenefitsID",
+				"type": "INT64"
+			},
+			{
+				"name": "ClaimID",
+				"type": "INT64"
+			},
+			{
+				"name": "WorkloadUpdated",
+				"type": "INT96"
+			},
+			{
+				"name": "PIPDeathBenefitsID",
+				"type": "INT64"
+			},
+			{
+				"name": "Strategy",
+				"type": "INT32"
+			},
+			{
+				"name": "CurrentConditions",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "UpdateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "LifePensionBenefitsID",
+				"type": "INT64"
+			},
+			{
+				"name": "BreakIn",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "TempLocationID",
+				"type": "INT64"
+			},
+			{
+				"name": "SecurityLevel",
+				"type": "INT32"
+			},
+			{
+				"name": "HospitalDate",
+				"type": "INT96"
+			},
+			{
+				"name": "SupplementalWorkloadWeight",
+				"type": "INT32"
+			},
+			{
+				"name": "FurtherTreatment",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "PriorEmpDataID",
+				"type": "INT64"
+			},
+			{
+				"name": "ReOpenDate",
+				"type": "INT96"
+			},
+			{
+				"name": "SSBenefit",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "CreateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "TTDBenefitsID",
+				"type": "INT64"
+			},
+			{
+				"name": "WageStmtRecd",
+				"type": "INT96"
+			},
+			{
+				"name": "OtherCoverage",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "ValidationLevel",
+				"type": "INT32"
+			},
+			{
+				"name": "Retired",
+				"type": "INT64"
+			},
+			{
+				"name": "HospitalDays",
+				"type": "INT32"
+			},
+			{
+				"name": "ISOKnown",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "ExaminationDate",
+				"type": "INT96"
+			},
+			{
+				"name": "DaysInWeek",
+				"type": "INT32"
+			},
+			{
+				"name": "ExposureLimitReached",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "AssignedUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "ID",
+				"type": "INT64"
+			},
+			{
+				"name": "RIAgreementGroupID",
+				"type": "INT64"
+			},
+			{
+				"name": "PreviousQueueID",
+				"type": "INT64"
+			},
+			{
+				"name": "TreatedPatientBfr",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "PPDBenefitsID",
+				"type": "INT64"
+			},
+			{
+				"name": "AverageWeeklyWages",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "WageBenefit",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "PIPNonMedAggLimitReached",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "WCBenefit",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "PTDBenefitsID",
+				"type": "INT64"
+			},
+			{
+				"name": "WCBenefitsID",
+				"type": "INT64"
+			},
+			{
+				"name": "RSBenefitsID",
+				"type": "INT64"
+			},
+			{
+				"name": "TPDBenefitsID",
+				"type": "INT64"
+			},
+			{
+				"name": "DiagnosticCnsistnt",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "PIPVocBenefitsID",
+				"type": "INT64"
+			},
+			{
+				"name": "MetricLimitGeneration",
+				"type": "INT32"
+			},
+			{
+				"name": "Locked",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "OtherCovgChoice",
+				"type": "INT32"
+			},
+			{
+				"name": "SettleMethod",
+				"type": "INT32"
+			},
+			{
+				"name": "PIPPersonAggLimitReached",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "ReplacementValue",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ArchivePartition",
+				"type": "INT64"
+			},
+			{
+				"name": "CreateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "RIGroupSetExternally",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "ISOSendDate",
+				"type": "INT96"
+			},
+			{
+				"name": "AssignmentStatus",
+				"type": "INT32"
+			},
+			{
+				"name": "PIPESSLimitReached",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "LoadCommandID",
+				"type": "INT64"
+			},
+			{
+				"name": "WorkloadWeight",
+				"type": "INT32"
+			},
+			{
+				"name": "Progress",
+				"type": "INT32"
+			},
+			{
+				"name": "VocBenefitsID",
+				"type": "INT64"
+			},
+			{
+				"name": "State",
+				"type": "INT32"
+			},
+			{
+				"name": "ExposureType",
+				"type": "INT32"
+			},
+			{
+				"name": "ExposureTier",
+				"type": "INT32"
+			},
+			{
+				"name": "LastDayWorked",
+				"type": "INT96"
+			},
+			{
+				"name": "PIPClaimAggLimitReached",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "PreviousGroupID",
+				"type": "INT64"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

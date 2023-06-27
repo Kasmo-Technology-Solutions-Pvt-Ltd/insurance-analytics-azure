@@ -1,0 +1,39 @@
+{
+	"name": "claimCenterFactMaster",
+	"properties": {
+		"activities": [
+			{
+				"name": "factClaimLossTransaction",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "cc_fact_losstransaction",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "factClaimAcctMonth",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "cc_fact_acct_month",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"folder": {
+			"name": "Insurance Analytics Azure"
+		},
+		"annotations": [],
+		"lastPublishTime": "2023-06-02T15:42:38Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,189 @@
+{
+	"name": "DS_LOSS_TRANSACTION_VW",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/CLAIM-CENTER/CC_Tables"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "CC_TRANSACTIONLINEITEM_ID",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "CLAIM_KEY",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CURRENCY_CODE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SOURCE",
+				"type": "varchar"
+			},
+			{
+				"name": "TRANSACTION_ALLOC_CODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TRANSACTION_AMOUNT",
+				"type": "decimal",
+				"precision": 29,
+				"scale": 2
+			},
+			{
+				"name": "RESERVE_CHANGE_AMOUNT",
+				"type": "decimal",
+				"precision": 29,
+				"scale": 2
+			},
+			{
+				"name": "RECOVERY_CATEGORY_TYPECODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TRANSACTION_CODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TRANSACTION_PROCESS_DATEID",
+				"type": "varchar"
+			},
+			{
+				"name": "TRANSACTION_SEQ",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "TRANSACTION_TYPECODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TRANACTION_DOESNOTERODERESERVES",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TRANSACTION_STATUS",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ACCOUNTING_PRDID",
+				"type": "varchar"
+			},
+			{
+				"name": "CHECK_ISSUEDATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "TRANS_PROCESSING_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "TRANSACTION_CURRENCY",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CHECK_PUBLICID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TRNLIN_LINEITEM",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CLAIMANT_KEY",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FEATURE_ID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "POL_ID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LOCATION_KEY",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LOSSDATE",
+				"type": "datetime2",
+				"scale": 7
+			},
+			{
+				"name": "TRN_STATUS_DESCRIPTION_EXT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TRANACTION_SUBTYPE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PMT_TYP_CODE_DESCRIPTION_EXT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TRANSACTION_LINEITEM_DESCRIPTION",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TRANSACTION_COST_TYPE_DESCRIPTION",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TRANACTION_COSTTYPE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PAYMENT_TYPE_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PRIMARYCOVERAGE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "COVERAGEKEY",
+				"type": "varchar"
+			},
+			{
+				"name": "AGCY_KEY",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AGNT_KEY",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "CCDM",
+			"table": "LOSS_TRANSACTION_VW"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,85 @@
+{
+	"name": "insuranceAnalyticsMaster",
+	"properties": {
+		"activities": [
+			{
+				"name": "policy center dim",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "policyCenterDimMaster",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": false
+				}
+			},
+			{
+				"name": "claim center dim",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "claimCenterDimMaster",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "execute PCfacts",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "policy center dim",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "claim center dim",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "policyCenterFactMaster",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "execute CCfacts",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "execute PCfacts",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "claimCenterFactMaster",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"folder": {
+			"name": "Insurance Analytics Azure"
+		},
+		"annotations": [],
+		"lastPublishTime": "2023-06-02T15:42:38Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

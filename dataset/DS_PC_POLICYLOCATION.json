@@ -1,0 +1,186 @@
+{
+	"name": "DS_PC_POLICYLOCATION",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/POLICY-CENTER"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "dbo_PC_POLICYLOCATION_2023-04-17 18:18:05:028.parquet",
+				"folderPath": "2023/2023-04/2023-04-17",
+				"fileSystem": "policy-center"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "PublicID",
+				"type": "UTF8"
+			},
+			{
+				"name": "CityKanjiInternalDenorm",
+				"type": "UTF8"
+			},
+			{
+				"name": "AddressLine1Internal",
+				"type": "UTF8"
+			},
+			{
+				"name": "CountyInternal",
+				"type": "UTF8"
+			},
+			{
+				"name": "AddressLine2Internal",
+				"type": "UTF8"
+			},
+			{
+				"name": "AddressLine3Internal",
+				"type": "UTF8"
+			},
+			{
+				"name": "CreateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "CityKanjiInternal",
+				"type": "UTF8"
+			},
+			{
+				"name": "AddressLine2KanjiInternal",
+				"type": "UTF8"
+			},
+			{
+				"name": "StateInternal",
+				"type": "INT32"
+			},
+			{
+				"name": "FixedID",
+				"type": "INT64"
+			},
+			{
+				"name": "CountryInternal",
+				"type": "INT32"
+			},
+			{
+				"name": "EffectiveDate",
+				"type": "INT96"
+			},
+			{
+				"name": "UpdateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "ID",
+				"type": "INT64"
+			},
+			{
+				"name": "ExpirationDate",
+				"type": "INT96"
+			},
+			{
+				"name": "EmployeeCountInternal",
+				"type": "INT32"
+			},
+			{
+				"name": "ValidUntilInternal",
+				"type": "INT96"
+			},
+			{
+				"name": "TaxLocation",
+				"type": "INT64"
+			},
+			{
+				"name": "CreateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "AccountLocation",
+				"type": "INT64"
+			},
+			{
+				"name": "CityInternalDenorm",
+				"type": "UTF8"
+			},
+			{
+				"name": "IndustryCodeID",
+				"type": "INT64"
+			},
+			{
+				"name": "ArchivePartition",
+				"type": "INT64"
+			},
+			{
+				"name": "BeanVersion",
+				"type": "INT32"
+			},
+			{
+				"name": "CityInternal",
+				"type": "UTF8"
+			},
+			{
+				"name": "ChangeType",
+				"type": "INT32"
+			},
+			{
+				"name": "AddressTypeInternal",
+				"type": "INT32"
+			},
+			{
+				"name": "AddressLine1KanjiInternal",
+				"type": "UTF8"
+			},
+			{
+				"name": "CEDEXBureauInternal",
+				"type": "UTF8"
+			},
+			{
+				"name": "BasedOnID",
+				"type": "INT64"
+			},
+			{
+				"name": "UpdateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "LocationNum",
+				"type": "INT32"
+			},
+			{
+				"name": "PostalCodeInternalDenorm",
+				"type": "UTF8"
+			},
+			{
+				"name": "CEDEXInternal",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "BuildingAutoNumberSeq",
+				"type": "INT64"
+			},
+			{
+				"name": "PostalCodeInternal",
+				"type": "UTF8"
+			},
+			{
+				"name": "DescriptionInternal",
+				"type": "UTF8"
+			},
+			{
+				"name": "BranchID",
+				"type": "INT64"
+			},
+			{
+				"name": "FireProtectClass",
+				"type": "INT32"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,315 @@
+{
+	"name": "DS_AZ_FACT_CLAIM_LOSS_ACDT_YEAR",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/CLAIM-CENTER/CC_Tables"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "CLAIM_LOSS_ACDT_YR_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ORG_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PRODUCT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "POLICY_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "COVERAGE_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CLAIMANT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CLAIM_FEATURE_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RECORD_TYPE_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "NAMED_INSURED_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ACCOUNT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LOCATION_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CLAIM_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AGENT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AGENCY_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CLAIM_STATUS_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ACCTG_PRD_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CURRENCY_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "OST_INDEMNITY_RESERVE_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "OST_MEDICAL_RESERVE_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "OST_ALAE_RESERVE_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "OST_ULAE_RESERVE_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "OST_SALVAGE_RESERVE_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "OST_SUBROGATION_RESERVE_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "INDEMNITY_RESERVE_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "MEDICAL_RESERVE_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ALAE_RESERVE_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ULAE_RESERVE_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "SALVAGE_RESERVE_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "SUBROGATION_RESERVE_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "INDEMNITY_PAID_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "MEDICAL_PAID_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ALAE_PAID_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ULAE_PAID_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "DEDUCTIBLE_RECOVERY_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "SALVAGE_RECOVERY_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "SUBROGATION_RECOVERY_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "INDEMNITY_RECOVERY_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "EXPENSE_RECOVERY_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ETL_ACTIVE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "ETL_ADD_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_LAST_UPDATE_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CURRENT_PERIOD_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "PREVIOUS_PERIOD_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "CURRENT_YEAR_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "PREVIOUS_YEAR_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "CURRENT_PERIOD_OPEN_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "PREVIOUS_PERIOD_OPEN_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "CURRENT_YEAR_OPEN_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "PREVIOUS_YEAR_OPEN_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "CURRENT_PERIOD_CLOSE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "PREVIOUS_PERIOD_CLOSE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "CURRENT_YEAR_CLOSE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "PREVIOUS_YEAR_CLOSE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "CURRENT_PERIOD_REOPEN_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "PREVIOUS_PERIOD_REOPEN_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "CURRENT_YEAR_REOPEN_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "PREVIOUS_YEAR_REOPEN_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "CLAIM_ACTIVE_DAYS",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "CCDM",
+			"table": "DW_FACT_CLAIM_LOSS_ACDT_YEAR"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

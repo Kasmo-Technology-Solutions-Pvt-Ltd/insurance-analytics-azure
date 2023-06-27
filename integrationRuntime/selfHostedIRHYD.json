@@ -1,0 +1,7 @@
+{
+	"name": "selfHostedIRHYD",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "Self Hosted IR For Sidhu Laptop"
+	}
+}

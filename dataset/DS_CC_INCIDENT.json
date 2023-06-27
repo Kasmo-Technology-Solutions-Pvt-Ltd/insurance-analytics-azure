@@ -1,0 +1,746 @@
+{
+	"name": "DS_CC_INCIDENT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/CLAIM-CENTER"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "dbo_CC_INCIDENT_2023-04-17 17:38:03:549.parquet",
+				"folderPath": "2023/2023-04/2023-04-17",
+				"fileSystem": "claim-center"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "RentalRequired",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "ReturnToWorkActual",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "VehicleDriveable",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "FireBurnEngine",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "RelatedTripRUID",
+				"type": "INT64"
+			},
+			{
+				"name": "VehicleTitleRecvd",
+				"type": "INT32"
+			},
+			{
+				"name": "PropertyID",
+				"type": "INT64"
+			},
+			{
+				"name": "DamagedAreaSize",
+				"type": "INT32"
+			},
+			{
+				"name": "FireProtectionAvailable",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "RoofMaterial",
+				"type": "INT32"
+			},
+			{
+				"name": "VehicleRollOver",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "HitAndRun",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "VehicleUseReason",
+				"type": "INT32"
+			},
+			{
+				"name": "StartDate",
+				"type": "INT96"
+			},
+			{
+				"name": "RecovClassType",
+				"type": "INT32"
+			},
+			{
+				"name": "BeanVersion",
+				"type": "INT32"
+			},
+			{
+				"name": "SalvageStorage",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "DelayOnly",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "AirbagsMissing",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "RentalAgency",
+				"type": "UTF8"
+			},
+			{
+				"name": "SprinkRetServ",
+				"type": "INT32"
+			},
+			{
+				"name": "LossofUse",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "MovePermission",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "AffdvCmplInd",
+				"type": "INT32"
+			},
+			{
+				"name": "IncludeContentLineItems",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "VehicleParked",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "InternalUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "MealsDays",
+				"type": "INT32"
+			},
+			{
+				"name": "NumberOfPeopleOnPolicy",
+				"type": "INT32"
+			},
+			{
+				"name": "SalvagePrep",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "TrafficViolation",
+				"type": "INT32"
+			},
+			{
+				"name": "CitationIssued",
+				"type": "INT32"
+			},
+			{
+				"name": "MinorOnPolicy",
+				"type": "INT32"
+			},
+			{
+				"name": "EstimatesReceived",
+				"type": "INT32"
+			},
+			{
+				"name": "AmbulanceUsed",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "EquipmentFailure",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "StorageFeeAmt",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "TotalLoss",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "VehicleSubmerged",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "FireBurnWindshield",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "NumSprinkOper",
+				"type": "INT32"
+			},
+			{
+				"name": "MealsPeople",
+				"type": "INT32"
+			},
+			{
+				"name": "AlarmType",
+				"type": "INT32"
+			},
+			{
+				"name": "AssessmentType",
+				"type": "INT32"
+			},
+			{
+				"name": "InspectionRequired",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "ReturnToWorkDate",
+				"type": "INT96"
+			},
+			{
+				"name": "DateVehicleSold",
+				"type": "INT96"
+			},
+			{
+				"name": "PublicID",
+				"type": "UTF8"
+			},
+			{
+				"name": "OccupancyType",
+				"type": "INT32"
+			},
+			{
+				"name": "CarrierCompensatedAmount",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "AppraisalFirstAppointment",
+				"type": "INT96"
+			},
+			{
+				"name": "Appraisal",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "RentalEndDate",
+				"type": "INT96"
+			},
+			{
+				"name": "OwnersPermission",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "VehicleDirection",
+				"type": "INT32"
+			},
+			{
+				"name": "AssessmentCloseDate",
+				"type": "INT96"
+			},
+			{
+				"name": "RecovState",
+				"type": "INT32"
+			},
+			{
+				"name": "SalvageTitle",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "DriverRelation",
+				"type": "INT32"
+			},
+			{
+				"name": "MaterialsDamaged",
+				"type": "UTF8"
+			},
+			{
+				"name": "RentalReserveNo",
+				"type": "UTF8"
+			},
+			{
+				"name": "LossArea",
+				"type": "INT32"
+			},
+			{
+				"name": "GeneralInjuryType",
+				"type": "INT32"
+			},
+			{
+				"name": "VehicleAge10Years",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "UpdateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "ClaimID",
+				"type": "INT64"
+			},
+			{
+				"name": "RecovDate",
+				"type": "INT96"
+			},
+			{
+				"name": "UpdateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "WhenToView",
+				"type": "UTF8"
+			},
+			{
+				"name": "FireBurnDash",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "ExtDamagetxt",
+				"type": "UTF8"
+			},
+			{
+				"name": "VehicleLossParty",
+				"type": "INT32"
+			},
+			{
+				"name": "Speed",
+				"type": "INT32"
+			},
+			{
+				"name": "EstRepairCost",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "Collision",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "AssessmentComment",
+				"type": "UTF8"
+			},
+			{
+				"name": "ClaimIncident",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "AntiThftInd",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "LocationInd",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "CreateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "StorageAccrInd",
+				"type": "INT32"
+			},
+			{
+				"name": "SprinklerType",
+				"type": "INT32"
+			},
+			{
+				"name": "FloodSaltWater",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "CollisionPoint",
+				"type": "INT32"
+			},
+			{
+				"name": "DisabledDueToAccident",
+				"type": "INT32"
+			},
+			{
+				"name": "VehiclePolStatus",
+				"type": "INT32"
+			},
+			{
+				"name": "InteriorMissing",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "WaterLevelSeats",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "DateVehicleRecovered",
+				"type": "INT96"
+			},
+			{
+				"name": "RepWhereDisInd",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "Extrication",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "Retired",
+				"type": "INT64"
+			},
+			{
+				"name": "SalvageTow",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "VehicleTitleReqd",
+				"type": "INT32"
+			},
+			{
+				"name": "IncludeLineItems",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "Impairment",
+				"type": "DECIMAL",
+				"precision": 4,
+				"scale": 1
+			},
+			{
+				"name": "LossDesc",
+				"type": "UTF8"
+			},
+			{
+				"name": "DateSalvageAssigned",
+				"type": "INT96"
+			},
+			{
+				"name": "PercentageDrivenByMinor",
+				"type": "INT32"
+			},
+			{
+				"name": "AssessmentTargetCloseDate",
+				"type": "INT96"
+			},
+			{
+				"name": "PropertySize",
+				"type": "INT32"
+			},
+			{
+				"name": "OdomRead",
+				"type": "INT32"
+			},
+			{
+				"name": "Severity",
+				"type": "INT32"
+			},
+			{
+				"name": "ReturnToModWorkValid",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "NumSprinkler",
+				"type": "INT32"
+			},
+			{
+				"name": "BaggageType",
+				"type": "INT32"
+			},
+			{
+				"name": "ID",
+				"type": "INT64"
+			},
+			{
+				"name": "SalvageNet",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "FencesDamaged",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "WaterLevelDash",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "VehicleID",
+				"type": "INT64"
+			},
+			{
+				"name": "StorageFclty",
+				"type": "UTF8"
+			},
+			{
+				"name": "RecoveryLocationID",
+				"type": "INT64"
+			},
+			{
+				"name": "TotalLossPoints",
+				"type": "INT32"
+			},
+			{
+				"name": "DescOther",
+				"type": "UTF8"
+			},
+			{
+				"name": "RecovCondType",
+				"type": "INT32"
+			},
+			{
+				"name": "LossOccured",
+				"type": "INT32"
+			},
+			{
+				"name": "BodyShopSelected",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "DriverRelToOwner",
+				"type": "INT32"
+			},
+			{
+				"name": "VehicleAge5Years",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "SalvageProceeds",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "VehicleACV",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "Subtype",
+				"type": "INT32"
+			},
+			{
+				"name": "RentalDailyRate",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "RentalBeginDate",
+				"type": "INT96"
+			},
+			{
+				"name": "ExtWallMat",
+				"type": "INT32"
+			},
+			{
+				"name": "TripRUID",
+				"type": "INT64"
+			},
+			{
+				"name": "MealsRate",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "MoldInvolved",
+				"type": "INT32"
+			},
+			{
+				"name": "LocationAddress",
+				"type": "INT64"
+			},
+			{
+				"name": "VehicleOperable",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "AlreadyRepaired",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "LotNumber",
+				"type": "UTF8"
+			},
+			{
+				"name": "VehTowedInd",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "Mileage100K",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "BaggageMissingFrom",
+				"type": "INT96"
+			},
+			{
+				"name": "LossEstimate",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "DetailedInjuryType",
+				"type": "INT32"
+			},
+			{
+				"name": "VehicleType",
+				"type": "INT32"
+			},
+			{
+				"name": "EstDamageType",
+				"type": "INT32"
+			},
+			{
+				"name": "CarrierCompensated",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "PhantomVehicle",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "EMSInd",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "VehStolenInd",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "VehCondType",
+				"type": "INT32"
+			},
+			{
+				"name": "ArchivePartition",
+				"type": "INT64"
+			},
+			{
+				"name": "LostWages",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "VehLockInd",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "CreateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "YearBuilt",
+				"type": "INT96"
+			},
+			{
+				"name": "AssessmentName",
+				"type": "UTF8"
+			},
+			{
+				"name": "OwnerRetainingSalvage",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "NumStories",
+				"type": "INT32"
+			},
+			{
+				"name": "EstRepairTime",
+				"type": "UTF8"
+			},
+			{
+				"name": "Description",
+				"type": "UTF8"
+			},
+			{
+				"name": "ComponentsMissing",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "ReturnToModWorkActual",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "LoadCommandID",
+				"type": "INT64"
+			},
+			{
+				"name": "RecovInd",
+				"type": "INT32"
+			},
+			{
+				"name": "SalvageCompany",
+				"type": "UTF8"
+			},
+			{
+				"name": "ClassType",
+				"type": "INT32"
+			},
+			{
+				"name": "VehicleLocation",
+				"type": "UTF8"
+			},
+			{
+				"name": "ReturnToWorkValid",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "BaggageRecoveredOn",
+				"type": "INT96"
+			},
+			{
+				"name": "DebrisRemovalInd",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "FireProtDetails",
+				"type": "UTF8"
+			},
+			{
+				"name": "AssessmentStatus",
+				"type": "INT32"
+			},
+			{
+				"name": "MedicalTreatmentType",
+				"type": "INT32"
+			},
+			{
+				"name": "YearsInHome",
+				"type": "INT32"
+			},
+			{
+				"name": "ReturnToModWorkDate",
+				"type": "INT96"
+			},
+			{
+				"name": "AirbagsDeployed",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "HazardInvolved",
+				"type": "INT32"
+			},
+			{
+				"name": "PropertyDesc",
+				"type": "UTF8"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,157 @@
+{
+	"name": "DS_AZ_FACT_EARNED_PREMIUM",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/POLICY-CENTER"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "EARNED_PREMIUM_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ORGANIZATION_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PRODUCT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "POLICY_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "COVERAGE_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LOCATION_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AGENT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "COVERAGE_KEY",
+				"type": "varchar"
+			},
+			{
+				"name": "MONTH_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "DATE_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "REC_TYPE_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CURRENCY_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "INFORCE_PREMIUM_AMOUNT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "NP_INFORCE_PREMIUM_AMOUNT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RP_INFORCE_PREMIUM_AMOUNT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "WRITTEN_PREMIUM_AMOUNT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "NP_WRITTEN_PREMIUM_AMOUNT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RP_WRITTEN_PREMIUM_AMOUNT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "EARNED_PREMIUM_AMOUNT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "NP_EARNED_PREMIUM_AMOUNT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RP_EARNED_PREMIUM_AMOUNT",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ETL_ACTIVE_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "ETL_ADD_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_LAST_UPDATE_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ACCTG_PERIODID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "COMMISSION_AMOUNT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "COMMISSION_PERCENT",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			}
+		],
+		"typeProperties": {
+			"schema": "PCDM",
+			"table": "DW_FACT_EARNED_PREMIUM"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

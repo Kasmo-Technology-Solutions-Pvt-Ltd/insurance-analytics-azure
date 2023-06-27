@@ -1,0 +1,240 @@
+{
+	"name": "DS_PC_JOB",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DATA_LAKE",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/POLICY-CENTER"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "dbo_PC_JOB_2023-04-17 18:18:05:028.parquet",
+				"folderPath": "2023/2023-04/2023-04-17",
+				"fileSystem": "policy-center"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "NotTakenNotifDate",
+				"type": "INT96"
+			},
+			{
+				"name": "ArchiveState",
+				"type": "INT32"
+			},
+			{
+				"name": "ArchiveSchemaInfo",
+				"type": "INT64"
+			},
+			{
+				"name": "UpdateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "NotificationDate",
+				"type": "INT96"
+			},
+			{
+				"name": "ID",
+				"type": "INT64"
+			},
+			{
+				"name": "Source",
+				"type": "INT32"
+			},
+			{
+				"name": "ExcludeReason",
+				"type": "UTF8"
+			},
+			{
+				"name": "NextPurgeCheckDate",
+				"type": "INT96"
+			},
+			{
+				"name": "CreateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "ArchiveFailureID",
+				"type": "INT64"
+			},
+			{
+				"name": "RejectReason",
+				"type": "INT32"
+			},
+			{
+				"name": "CloseDate",
+				"type": "INT96"
+			},
+			{
+				"name": "BeanVersion",
+				"type": "INT32"
+			},
+			{
+				"name": "Retired",
+				"type": "INT64"
+			},
+			{
+				"name": "CancelReasonCode",
+				"type": "INT32"
+			},
+			{
+				"name": "ChangePolicyNumber",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "UpdateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "PrimaryInsuredNameDenorm",
+				"type": "UTF8"
+			},
+			{
+				"name": "NonRenewalNotifDate",
+				"type": "INT96"
+			},
+			{
+				"name": "PrimaryInsuredName",
+				"type": "UTF8"
+			},
+			{
+				"name": "QuoteType",
+				"type": "INT32"
+			},
+			{
+				"name": "DateQuoteNeeded",
+				"type": "INT96"
+			},
+			{
+				"name": "PublicID",
+				"type": "UTF8"
+			},
+			{
+				"name": "SideBySide",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "JobNumber",
+				"type": "UTF8"
+			},
+			{
+				"name": "RewriteType",
+				"type": "INT32"
+			},
+			{
+				"name": "CreateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "AuditInformationID",
+				"type": "INT64"
+			},
+			{
+				"name": "PolicyID",
+				"type": "INT64"
+			},
+			{
+				"name": "ExcludedFromArchive",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "RejectReasonText",
+				"type": "UTF8"
+			},
+			{
+				"name": "ArchiveFailureDetailsID",
+				"type": "INT64"
+			},
+			{
+				"name": "RescindNotificationDate",
+				"type": "INT96"
+			},
+			{
+				"name": "PurgeStatus",
+				"type": "INT32"
+			},
+			{
+				"name": "InitialNotificationDate",
+				"type": "INT96"
+			},
+			{
+				"name": "LastNotifiedCancellationDate",
+				"type": "INT96"
+			},
+			{
+				"name": "JobGroup",
+				"type": "INT64"
+			},
+			{
+				"name": "CancelProcessDate",
+				"type": "INT96"
+			},
+			{
+				"name": "RenewalCode",
+				"type": "INT32"
+			},
+			{
+				"name": "EscalateAfterHoldReleased",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "ReinstateCode",
+				"type": "INT32"
+			},
+			{
+				"name": "RenewalNotifDate",
+				"type": "INT96"
+			},
+			{
+				"name": "PaymentReceived",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "ArchivePartition",
+				"type": "INT64"
+			},
+			{
+				"name": "PaymentReceived_cur",
+				"type": "INT32"
+			},
+			{
+				"name": "NotificationAckDate",
+				"type": "INT96"
+			},
+			{
+				"name": "ArchiveDate",
+				"type": "INT96"
+			},
+			{
+				"name": "BindOption",
+				"type": "INT32"
+			},
+			{
+				"name": "NonRenewalCode",
+				"type": "INT32"
+			},
+			{
+				"name": "Subtype",
+				"type": "INT32"
+			},
+			{
+				"name": "SubmissionDate",
+				"type": "INT96"
+			},
+			{
+				"name": "Description",
+				"type": "UTF8"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

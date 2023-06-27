@@ -1,0 +1,70 @@
+{
+	"name": "DS_DW_DIM_PRODUCT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/POLICY-CENTER"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "PRODUCT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SOURCE",
+				"type": "varchar"
+			},
+			{
+				"name": "LOB_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "LOB_CODE_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "LINE_DIV_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "LINE_DIV_CODE_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "PRODUCT_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "PROG_CD",
+				"type": "varchar"
+			},
+			{
+				"name": "ETL_ADD_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_LAST_UPDATE_DATETIMESTAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ETL_ACTIVE_FLAG",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "PCDM",
+			"table": "DW_DIM_PRODUCT"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

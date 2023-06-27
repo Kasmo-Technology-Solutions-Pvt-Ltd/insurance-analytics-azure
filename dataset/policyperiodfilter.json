@@ -1,0 +1,390 @@
+{
+	"name": "policyperiodfilter",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SCD1_TEST",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Insurance Analytics Azure/POLICY-CENTER"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "dbo_PC_POLICYPERIOD_2023-04-17 18:18:05:028.parquet",
+				"folderPath": "2023/2023-04/2023-04-17",
+				"container": "policy-center"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "BasedOnDate",
+				"type": "INT96"
+			},
+			{
+				"name": "ValidQuote",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "TotalPremiumRPT",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "TotalPremiumRPT_cur",
+				"type": "INT32"
+			},
+			{
+				"name": "MinimumPremium",
+				"type": "INT64"
+			},
+			{
+				"name": "Locked",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "EditEffectiveDate",
+				"type": "INT96"
+			},
+			{
+				"name": "ValidReinsurance",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "SeriesCheckingPatternCode",
+				"type": "UTF8"
+			},
+			{
+				"name": "ArchiveState",
+				"type": "INT32"
+			},
+			{
+				"name": "ArchiveSchemaInfo",
+				"type": "INT64"
+			},
+			{
+				"name": "PNIContactDenorm",
+				"type": "INT64"
+			},
+			{
+				"name": "LocationAutoNumberSeq",
+				"type": "INT64"
+			},
+			{
+				"name": "EditLocked",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "UpdateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "RateAsOfDate",
+				"type": "INT96"
+			},
+			{
+				"name": "JobID",
+				"type": "INT64"
+			},
+			{
+				"name": "ID",
+				"type": "INT64"
+			},
+			{
+				"name": "SingleCheckingPatternCode",
+				"type": "UTF8"
+			},
+			{
+				"name": "UWCompany",
+				"type": "INT64"
+			},
+			{
+				"name": "BillingMethod",
+				"type": "INT32"
+			},
+			{
+				"name": "PeriodID",
+				"type": "INT64"
+			},
+			{
+				"name": "TransactionPremiumRPT",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "AssignedRisk",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "ExcludeReason",
+				"type": "UTF8"
+			},
+			{
+				"name": "TransactionPremiumRPT_cur",
+				"type": "INT32"
+			},
+			{
+				"name": "CreateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "ArchiveFailureID",
+				"type": "INT64"
+			},
+			{
+				"name": "AllowGapsBefore",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "QuoteHidden",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "BeanVersion",
+				"type": "INT32"
+			},
+			{
+				"name": "FailedOOSEValidation",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "Retired",
+				"type": "INT64"
+			},
+			{
+				"name": "BranchName",
+				"type": "UTF8"
+			},
+			{
+				"name": "Preempted",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "UpdateUserID",
+				"type": "INT64"
+			},
+			{
+				"name": "FuturePeriods",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "PrimaryInsuredNameDenorm",
+				"type": "UTF8"
+			},
+			{
+				"name": "CancellationDate",
+				"type": "INT96"
+			},
+			{
+				"name": "ModelNumber",
+				"type": "INT32"
+			},
+			{
+				"name": "TemporaryBranch",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "PrimaryInsuredName",
+				"type": "UTF8"
+			},
+			{
+				"name": "Segment",
+				"type": "INT32"
+			},
+			{
+				"name": "TermNumber",
+				"type": "INT32"
+			},
+			{
+				"name": "DepositOverridePct",
+				"type": "DECIMAL",
+				"precision": 12,
+				"scale": 3
+			},
+			{
+				"name": "PolicyTermID",
+				"type": "INT64"
+			},
+			{
+				"name": "WaiveDepositChange",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "PeriodStart",
+				"type": "INT96"
+			},
+			{
+				"name": "ProducerCodeOfRecordID",
+				"type": "INT64"
+			},
+			{
+				"name": "DoNotPurge",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "PublicID",
+				"type": "UTF8"
+			},
+			{
+				"name": "AltBillingAccountNumber",
+				"type": "UTF8"
+			},
+			{
+				"name": "TotalCostRPT",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "WrittenDate",
+				"type": "INT96"
+			},
+			{
+				"name": "TotalCostRPT_cur",
+				"type": "INT32"
+			},
+			{
+				"name": "CreateTime",
+				"type": "INT96"
+			},
+			{
+				"name": "MostRecentModel",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "PolicyID",
+				"type": "INT64"
+			},
+			{
+				"name": "ExcludedFromArchive",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "AllocationOfRemainder",
+				"type": "INT32"
+			},
+			{
+				"name": "OverrideBillingAllocation",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "ArchiveFailureDetailsID",
+				"type": "INT64"
+			},
+			{
+				"name": "ModelDate",
+				"type": "INT96"
+			},
+			{
+				"name": "InvoiceStreamCode",
+				"type": "UTF8"
+			},
+			{
+				"name": "ModelNumberIndex",
+				"type": "UTF8"
+			},
+			{
+				"name": "BaseState",
+				"type": "INT32"
+			},
+			{
+				"name": "MostRecentModelIndex",
+				"type": "UTF8"
+			},
+			{
+				"name": "ArchivePartition",
+				"type": "INT64"
+			},
+			{
+				"name": "CustomBilling",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "TransactionCostRPT",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "BranchNumber",
+				"type": "INT32"
+			},
+			{
+				"name": "FailedOOSEEvaluation",
+				"type": "BOOLEAN"
+			},
+			{
+				"name": "DepositCollected",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "TransactionCostRPT_cur",
+				"type": "INT32"
+			},
+			{
+				"name": "DepositCollected_cur",
+				"type": "INT32"
+			},
+			{
+				"name": "BasedOnID",
+				"type": "INT64"
+			},
+			{
+				"name": "LockingColumn",
+				"type": "INT32"
+			},
+			{
+				"name": "RefundCalcMethod",
+				"type": "INT32"
+			},
+			{
+				"name": "ArchiveDate",
+				"type": "INT96"
+			},
+			{
+				"name": "BillImmediatelyPercentage",
+				"type": "DECIMAL",
+				"precision": 4,
+				"scale": 1
+			},
+			{
+				"name": "Status",
+				"type": "INT32"
+			},
+			{
+				"name": "DepositAmount",
+				"type": "DECIMAL",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "DepositAmount_cur",
+				"type": "INT32"
+			},
+			{
+				"name": "PeriodEnd",
+				"type": "INT96"
+			},
+			{
+				"name": "PreferredCoverageCurrency",
+				"type": "INT32"
+			},
+			{
+				"name": "PolicyNumber",
+				"type": "UTF8"
+			},
+			{
+				"name": "PreferredSettlementCurrency",
+				"type": "INT32"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
