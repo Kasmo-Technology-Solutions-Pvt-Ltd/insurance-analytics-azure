@@ -1,0 +1,9 @@
+{
+	"name": "insurane-analytics",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "af417595-69b3-4704-974c-c0347a310ab1",
+		"tenantId": "979ffdff-332b-406c-8644-6d8db569225f"
+	}
+}
