@@ -1,0 +1,6 @@
+{
+	"name": "selfhostedintegrationia",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
