@@ -1,0 +1,9 @@
+{
+	"name": "insurance-analytics12",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "9079660b-dd7b-4695-afa2-eae18342ebdd",
+		"tenantId": "19a1f547-eda4-4678-8adf-2767f9edd183"
+	}
+}
